@@ -12,18 +12,18 @@
         "marketType": "goals",
         "line": 0,
         "oddsOver": "-165",
-        "oddsUnder": "+425",
+        "oddsUnder": "+450",
         "params": {
           "PA": 0,
-          "hitProb": 0.62,
-          "meanRuns": -0.0026415094339623524,
-          "meanRBI": 0.0,
+          "hitProb": 0.65,
+          "meanRuns": 0.027358490566037674,
+          "meanRBI": 0.018125000000000023,
           "meanHR": 0
         }
       },
       {
         "id": "fb_usa_goles",
-        "name": "Total de Goles (Over/Under)",
+        "name": "Total de Goles (Línea: 2.5)",
         "team": "TOTAL",
         "marketType": "combo",
         "line": 2.5,
@@ -31,10 +31,10 @@
         "oddsUnder": "-135",
         "params": {
           "PA": 0,
-          "hitProb": 0.5423791164789342,
-          "meanRuns": 0.06618864028845806,
-          "meanRBI": 0.03159003286494589,
-          "meanHR": 2.85
+          "hitProb": 0.58,
+          "meanRuns": 0.1038095238095238,
+          "meanRBI": 0.04954545454545454,
+          "meanHR": 0
         }
       },
       {
