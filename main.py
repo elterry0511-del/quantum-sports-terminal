@@ -2,127 +2,110 @@ import math
 import json
 
 # =====================================================================
-# 📊 PANEL DE ENTRADA DE DATOS (ESTADOS UNIDOS vs BOSNIA)
+# 🎛️ PANEL DE INYECCIÓN MANUAL: ESTADOS UNIDOS vs BOSNIA
 # =====================================================================
-# Introduce aquí las cuotas de tu casa de apuestas y tus proyecciones.
+# Cambia únicamente los valores de este bloque con las cuotas de tu casa de
+# apuestas y tus probabilidades estimadas. El sistema procesará el resto.
 
-# 1. LÍNEA DE DINERO (MONEYLINE)
-CUOTA_USA = "-165"          # Cuota americana para la victoria de USA (Over de la línea 0)
-CUOTA_BOSNIA = "+425"       # Cuota americana para la victoria de Bosnia (Under de la línea 0)
-PROB_PROYECTADA_USA = 0.62  # Tu probabilidad estimada de que gane USA (0.00 a 1.00)
+# 1. GANADOR DEL PARTIDO (MONEYLINE)
+CUOTA_USA_GANADOR = "-165"          # Cuota americana para la victoria de USA
+CUOTA_BOSNIA_GANADOR = "+450"       # Cuota americana para la victoria de Bosnia
+PROB_PROYECTADA_USA = 0.65          # Tu probabilidad estimada para USA (0.0 a 1.0)
+PROB_PROYECTADA_BOSNIA = 0.15       # Tu probabilidad estimada para Bosnia (0.0 a 1.0)
 
 # 2. TOTAL DE GOLES (OVER / UNDER)
-LINEA_GOLES = 2.5
-CUOTA_GOLES_OVER = "+110"
-CUOTA_GOLES_UNDER = "-135"
-PROYECCION_MEDIA_GOLES = 2.85 # Media de goles esperada (Lambda para Poisson)
+LINEA_GOLES = 2.5                   # Línea del mercado de goles
+CUOTA_GOLES_OVER = "+110"           # Cuota para el Over (Más de)
+CUOTA_GOLES_UNDER = "-135"          # Cuota para el Under (Menos de)
+PROB_PROYECTADA_OVER_GOLES = 0.58   # Tu probabilidad estimada para el Over (0.0 a 1.0)
+PROB_PROYECTADA_UNDER_GOLES = 0.42  # Tu probabilidad estimada para el Under (0.0 a 1.0)
 
-# 3. AMBOS MARCAN (BTTS - BOTH TEAMS TO SCORE)
-CUOTA_BTTS_SI = "-115"      # Cuota para el "Sí" (Mapeado como OVER)
-CUOTA_BTTS_NO = "-105"      # Cuota para el "No" (Mapeado como UNDER)
-PROB_PROYECTADA_BTTS_SI = 0.54 # Tu probabilidad estimada de que ambos anoten (0.00 a 1.00)
+# 3. AMBOS EQUIPOS MARCAN (BTTS - SÍ / NO)
+CUOTA_BTTS_SI = "-115"              # Cuota para el "Sí marcan ambos"
+CUOTA_BTTS_NO = "-105"              # Cuota para el "No marcan ambos"
+PROB_PROYECTADA_BTTS_SI = 0.54      # Tu probabilidad estimada para el SÍ (0.0 a 1.0)
+PROB_PROYECTADA_BTTS_NO = 0.46      # Tu probabilidad estimada para el NO (0.0 a 1.0)
 
 # =====================================================================
-# 🧠 CORE MATEMÁTICO: LÓGICA DE APUESTAS Y MODELADO DE PROBABILIDAD
+# 🧠 MOTOR DE PROCESAMIENTO CUANTITATIVO (EDGE & CRITERIO DE KELLY)
 # =====================================================================
 
 def american_to_decimal(american_odds):
-    """Convierte cuotas americanas a multiplicadores decimales de pago neto."""
+    """Convierte cuotas americanas a multiplicadores de ganancia neta."""
     try:
         odds = float(american_odds)
         if odds > 0:
             return odds / 100.0
         else:
             return 100.0 / abs(odds)
-    except ZeroDivisionError:
+    except:
         return 0.0
 
-def poisson_probability(la, k):
-    """Calcula la probabilidad exacta de un evento K usando distribución de Poisson."""
-    return (pow(la, k) * math.exp(-la)) / math.factorial(k)
-
-def calculate_poisson_under(la, line):
-    """Calcula la probabilidad acumulada por debajo de la línea de goles."""
-    prob_under = 0.0
-    max_goles_under = math.ceil(line)
-    for k in range(max_goles_under):
-        prob_under += poisson_probability(la, k)
-    return prob_under
-
 def calculate_edge_and_kelly(p_proyectada, net_odds):
-    """Calcula el Edge neto y la fracción de Kelly optimizada al 25%."""
+    """Calcula el Edge exacto y aplica la fracción de Quarter Kelly (25%)."""
     if net_odds <= 0:
         return 0.0, 0.0
     implied_p = 1.0 / (net_odds + 1.0)
     edge = p_proyectada - implied_p
     
-    # Criterio de Kelly estándar: (p * b - q) / b -> Reducido al 25% de fracción (Quarter Kelly)
     if edge > 0:
         q = 1.0 - p_proyectada
         kelly_completo = (p_proyectada * net_odds - q) / net_odds
-        fractional_kelly = max(0.0, kelly_completo * 0.25)
+        fractional_kelly = max(0.0, kelly_completo * 0.25) # Filtro de riesgo estricto
     else:
         fractional_kelly = 0.0
     return edge, fractional_kelly
 
-def generate_quantum_slate():
-    slate = []
-    
-    # Convertidores de pago neto (b) para las fórmulas
-    b_usa = american_to_decimal(CUOTA_USA)
-    b_bosnia = american_to_decimal(CUOTA_BOSNIA)
-    b_goles_over = american_to_decimal(CUOTA_GOLES_OVER)
-    b_goles_under = american_to_decimal(CUOTA_GOLES_UNDER)
+def generate_clean_football_slate():
+    # Conversión de cuotas netas
+    b_usa = american_to_decimal(CUOTA_USA_GANADOR)
+    b_bosnia = american_to_decimal(CUOTA_BOSNIA_GANADOR)
+    b_over = american_to_decimal(CUOTA_GOLES_OVER)
+    b_under = american_to_decimal(CUOTA_GOLES_UNDER)
     b_btts_si = american_to_decimal(CUOTA_BTTS_SI)
     b_btts_no = american_to_decimal(CUOTA_BTTS_NO)
 
-    # 1. Procesar matemáticas de Moneyline
+    # Procesamiento estadístico de ventajas (Edge)
     edge_usa, kelly_usa = calculate_edge_and_kelly(PROB_PROYECTADA_USA, b_usa)
-    prob_bosnia_proyectada = 1.0 - PROB_PROYECTADA_USA - 0.12 # Deducción estimada del empate técnico
-    edge_bosnia, _ = calculate_edge_and_kelly(prob_bosnia_proyectada, b_bosnia)
-
-    # 2. Procesar matemáticas de Goles mediante distribución de Poisson
-    prob_under_goles = calculate_poisson_under(PROYECCION_MEDIA_GOLES, LINEA_GOLES)
-    prob_over_goles = 1.0 - prob_under_goles
-    edge_over, kelly_over = calculate_edge_and_kelly(prob_over_goles, b_goles_over)
-    edge_under, kelly_under = calculate_edge_and_kelly(prob_under_goles, b_goles_under)
-
-    # 3. Procesar matemáticas de Ambos Marcan
+    
+    edge_over, kelly_over = calculate_edge_and_kelly(PROB_PROYECTADA_OVER_GOLES, b_over)
+    edge_under, kelly_under = calculate_edge_and_kelly(PROB_PROYECTADA_UNDER_GOLES, b_under)
+    
     edge_btts_si, kelly_btts_si = calculate_edge_and_kelly(PROB_PROYECTADA_BTTS_SI, b_btts_si)
-    edge_btts_no, kelly_btts_no = calculate_edge_and_kelly(1.0 - PROB_PROYECTADA_BTTS_SI, b_btts_no)
+    edge_btts_no, kelly_btts_no = calculate_edge_and_kelly(PROB_PROYECTADA_BTTS_NO, b_btts_no)
 
-    # Ensamblaje estructural del slate limpio para la Pizarra Activa
-    props_partido = [
+    # Empaquetado estructural limpio para la interfaz
+    props = [
         {
             "id": "fb_usa_ml",
             "name": "Línea de Dinero - Victoria USA",
             "team": "USA",
             "marketType": "goals",
             "line": 0,
-            "oddsOver": CUOTA_USA,
-            "oddsUnder": CUOTA_BOSNIA,
+            "oddsOver": CUOTA_USA_GANADOR,
+            "oddsUnder": CUOTA_BOSNIA_GANADOR,
             "params": {
-                "PA": 0, 
-                "hitProb": float(PROB_PROYECTADA_USA), 
-                "meanRuns": float(edge_usa), # Inyecta el cálculo de edge directo en la matriz
-                "meanRBI": float(kelly_usa),  # Pasa la fracción de Kelly al renderizador del panel derecho
+                "PA": 0,
+                "hitProb": float(PROB_PROYECTADA_USA),
+                "meanRuns": float(edge_usa),      # Se mapea directo a la columna 'Edge Limpio'
+                "meanRBI": float(kelly_usa),       # Envía la sugerencia de tamaño de apuesta a la derecha
                 "meanHR": 0
             }
         },
         {
             "id": "fb_usa_goles",
-            "name": "Total de Goles (Over/Under)",
+            "name": f"Total de Goles (Línea: {LINEA_GOLES})",
             "team": "TOTAL",
             "marketType": "combo",
             "line": float(LINEA_GOLES),
             "oddsOver": CUOTA_GOLES_OVER,
             "oddsUnder": CUOTA_GOLES_UNDER,
             "params": {
-                "PA": 0, 
-                "hitProb": float(prob_over_goles), 
-                "meanRuns": float(edge_over if edge_over > edge_under else edge_under),
-                "meanRBI": float(kelly_over if edge_over > edge_under else kelly_under),
-                "meanHR": float(PROYECCION_MEDIA_GOLES)
+                "PA": 0,
+                "hitProb": float(PROB_PROYECTADA_OVER_GOLES),
+                "meanRuns": float(edge_over if edge_over >= edge_under else edge_under),
+                "meanRBI": float(kelly_over if edge_over >= edge_under else kelly_under),
+                "meanHR": 0
             }
         },
         {
@@ -134,30 +117,28 @@ def generate_quantum_slate():
             "oddsOver": CUOTA_BTTS_SI,
             "oddsUnder": CUOTA_BTTS_NO,
             "params": {
-                "PA": 0, 
-                "hitProb": float(PROB_PROYECTADA_BTTS_SI), 
-                "meanRuns": float(edge_btts_si),
-                "meanRBI": float(kelly_btts_si),
+                "PA": 0,
+                "hitProb": float(PROB_PROYECTADA_BTTS_SI),
+                "meanRuns": float(edge_btts_si if edge_btts_si >= edge_btts_no else edge_btts_no),
+                "meanRBI": float(kelly_btts_si if edge_btts_si >= edge_btts_no else kelly_btts_no),
                 "meanHR": 0
             }
         }
     ]
 
-    slate.append({
+    return [{
         "id": "g_futbol_usa_bosnia",
         "sport": "futbol",
         "matchup": "Estados Unidos vs Bosnia (Mundial 2026)",
         "short": "USAvsBIH",
-        "props": props_partido
-    })
-
-    return slate
+        "props": props
+    }]
 
 if __name__ == "__main__":
-    print("[⚡] Ejecutando el Motor del Modelo Quant de Fútbol...")
-    output_data = generate_quantum_slate()
+    print("[⚡] Compilando exclusivamente mercados principales de fútbol...")
+    clean_data = generate_clean_football_slate()
     
     with open("slate_hoy.json", "w", encoding="utf-8") as f:
-        json.dump(output_data, f, indent=2, ensure_ascii=False)
+        json.dump(clean_data, f, indent=2, ensure_ascii=False)
         
-    print("[✨] 'slate_hoy.json' sobrescrito con éxito. Los tres mercados analíticos están calculados.")
+    print("[✨] Proceso completado con éxito. Pizarra simplificada generada.")
