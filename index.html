@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Quantum Terminal Pro — Live Automation Tier</title>
+<script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  body { margin: 0; background: #020617; color: #F8FAFC; font-family: system-ui, -apple-system, sans-serif; }
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: #0F172A; }
+  ::-webkit-scrollbar-thumb { background: #1E293B; border-radius: 4px; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+
+<script type="text/babel">
+const { useState, useMemo, useEffect } = React;
+
+/* ---------- MOTORES MATEMÁTICOS DE DISTRIBUCIÓN ---------- */
+function factorial(n) { let r = 1; for (let i = 2; i <= n; i++) r *= i; return r; }
+function poissonPMF(k, lambda) { return lambda <= 0 ? (k === 0 ? 1 : 0) : (Math.exp(-lambda) * Math.pow(lambda, k)) / factorial(k); }
+function comb(n, k) { return (k < 0 || k > n) ? 0 : factorial(n) / (factorial(k) * factorial(n - k)); }
+let binomialPMF = (n, k, p) => (k < 0 || k > n) ? 0 : comb(n, k) * Math.pow(p, k) * Math.pow(1 - p, n - k);
+
+function binomialPMFArray(n, p) {
+  const nInt = Math.round(n); const arr = [];
+  for (let k = 0; k <= nInt; k++) arr.push(binomialPMF(nInt, k, p));
+  return arr;
+}
+function poissonPMFArray(lambda, maxK) {
+  const arr = []; for (let k = 0; k <= maxK; k++) arr.push(poissonPMF(k, lambda));
+  return arr;
+}
+function convolve(a, b) {
+  const res = new Array(a.length + b.length - 1).fill(0);
+  for (let i = 0; i < a.length; i++) { for (let j = 0; j < b.length; j++) res[i + j] += a[i] * b[j]; }
+  return res;
+}
+function sfFromPMF(pmf, k) {
+  let total = pmf.reduce((s, v) => s + v, 0); if (total <= 0) return 0;
+  let tail = 0; for (let i = k; i < pmf.length; i++) tail += pmf[i];
+  return tail / total;
+}
+
+function computeSoccerMatchMatrix(meanT1, meanT2) {
+  let t1Win = 0, draw = 0, t2Win = 0; const maxG = 6;
+  const p1 = poissonPMFArray(meanT1, maxG), p2 = poissonPMFArray(meanT2, maxG);
+  for (let i = 0; i <= maxG; i++) {
+    for (let j = 0; j <= maxG; j++) {
+      const pCell = (p1[i] || 0) * (p2[j] || 0);
+      if (i > j) t1Win += pCell; else if (i === j) draw += pCell; else t2Win += pCell;
+    }
+  }
+  return { t1Win, draw, t2Win, double1X: t1Win + draw, double2X: t2Win + draw };
+}
+
+/* ---------- MODELADORES DE CUOTAS ---------- */
+function toDecimal(raw) {
+  const n = parseFloat(raw); if (Number.isNaN(n) || n === 0) return null;
+  return n > 0 ? 1 + n / 100 : 1 + 100 / Math.abs(n);
+}
+function devigPair(overRaw, underRaw) {
+  const io = toDecimal(overRaw) ? 1 / toDecimal(overRaw) : null;
+  const iu = toDecimal(underRaw) ? 1 / toDecimal(underRaw) : null;
+  if (!io || !iu) return { over: null, under: null };
+  return { over: io / (io + iu), under: iu / (io + iu) };
+}
+
+const MARKETS_MAP = {
+  pitcherKs: "Ponches Pitcher (Ks)", hits: "Hits Bateador", runs: "Carreras Anotadas (R)",
+  rbis: "Carreras Impulsadas (RBI)", hr: "Jonrones (HR)", combo: "Combo (H+R+RBI)",
+  playerShots: "Total Tiros Jugador", playerSOT: "Tiros a Puerta", playerGA: "Gol o Asistencia (G/A)",
+  playerTackles: "Entradas Jugador", totalCorners: "Corners Totales", cornersT1: "Corners Equipo 1",
+  cornersT2: "Corners Equipo 2", match1X: "Doble Oportunidad 1X", match2X: "Doble Oportunidad 2X",
+  matchDraw: "Resultado: Empate", totalGoals: "Total Goles", goalsT1: "Goles Equipo 1", goalsT2: "Goles Equipo 2"
+};
+
+const INITIAL_SLATE = [
+  {
+    id: "g_init_1", sport: "mlb", matchup: "Terminal Cuántica (Esperando Bot de Python)", short: "INIT",
+    props: [
+      { id: "p_init_1", name: "Inyector Manual Activo", team: "CORE", marketType: "hits", line: 0.5, oddsOver: "-110", oddsUnder: "-110", params: { PA: 4.0, hitProb: 0.250, meanRuns: 0.4, meanRBI: 0.4, meanHR: 0.08, k9: 0, ip: 0 } }
+    ]
+  }
+];
+
+function App() {
+  const [slate, setSlate] = useState(INITIAL_SLATE);
+  const [activeGameId, setActiveGameId] = useState("g_init_1");
+  const [activePropId, setActivePropId] = useState("p_init_1");
+  const [bankroll, setBankroll] = useState("1000");
+
+  // Formulario Inyección Partidos
+  const [newMatchup, setNewMatchup] = useState("");
+  const [newSport, setNewSport] = useState("mlb");
+  
+  // Formulario Inyección Props
+  const [pName, setPName] = useState("");
+  const [pTeam, setPTeam] = useState("");
+  const [pMarket, setPMarket] = useState("hits");
+  const [pLine, setPLine] = useState("0.5");
+  const [pOver, setPOver] = useState("-110");
+  const [pUnder, setPUnder] = useState("-110");
+
+  // CONEXIÓN AUTOMÁTICA AL BACKEND DE PYTHON
+  useEffect(() => {
+    fetch('./slate_hoy.json')
+      .then(res => { if (res.ok) return res.json(); throw new Error(); })
+      .then(data => {
+        if (data && data.length > 0) {
+          setSlate(data);
+          setActiveGameId(data[0].id);
+          setActivePropId(data[0].props[0]?.id || "");
+        }
+      })
+      .catch(() => console.log("Pipeline: Modo manual activo. Esperando inicialización de automastismo de Python."));
+  }, []);
+
+  const injectGame = () => {
+    if (!newMatchup) return;
+    const id = "g_" + Date.now();
+    const newG = { id, sport: newSport, matchup: newMatchup, short: newMatchup.substring(0,7), props: [] };
+    setSlate(prev => [...prev, newG]); setActiveGameId(id); setNewMatchup("");
+  };
+
+  const injectProp = () => {
+    if (!pName || !pTeam) return;
+    const id = "p_" + Date.now();
+    const isSoccer = slate.find(g => g.id === activeGameId)?.sport === "soccer";
+    const newP = {
+      id, name: pName, team: pTeam, marketType: pMarket, line: parseFloat(pLine) || 0.5, oddsOver: pOver, oddsUnder: pUnder,
+      params: isSoccer ? { soccerMean: 1.5, soccerT1GoalsMean: 1.2, soccerT2GoalsMean: 1.1 } : { PA: 4.0, hitProb: 0.250, meanRuns: 0.4, meanRBI: 0.4, meanHR: 0.08, k9: 9.0, ip: 6.0 }
+    };
+    setSlate(prev => prev.map(g => g.id === activeGameId ? { ...g, props: [...g.props, newP] } : g));
+    setActivePropId(id); setPName(""); setPTeam("");
+  };
+
+  const evaluatedSlate = useMemo(() => {
+    return slate.map(game => {
+      const evalProps = game.props.map(p => {
+        let probOver = 0;
+        if (game.sport === "soccer") {
+          const matrix = computeSoccerMatchMatrix(p.params.soccerT1GoalsMean, p.params.soccerT2GoalsMean);
+          if (p.marketType === "match1X") probOver = matrix.double1X;
+          else if (p.marketType === "match2X") probOver = matrix.double2X;
+          else if (p.marketType === "matchDraw") probOver = matrix.draw;
+          else if (p.marketType === "totalGoals") probOver = sfFromPMF(poissonPMFArray(p.params.soccerT1GoalsMean + p.params.soccerT2GoalsMean, 12), Math.floor(p.line) + 1);
+          else if (p.marketType === "goalsT1") probOver = sfFromPMF(poissonPMFArray(p.params.soccerT1GoalsMean, 8), Math.floor(p.line) + 1);
+          else if (p.marketType === "goalsT2") probOver = sfFromPMF(poissonPMFArray(p.params.soccerT2GoalsMean, 8), Math.floor(p.line) + 1);
+          else probOver = sfFromPMF(poissonPMFArray(p.params.soccerMean, 20), Math.floor(p.line) + 1);
+        } else {
+          if (p.marketType === "hits") probOver = sfFromPMF(binomialPMFArray(p.params.PA, p.params.hitProb), Math.floor(p.line) + 1);
+          else if (p.marketType === "pitcherKs") probOver = sfFromPMF(poissonPMFArray(p.params.k9 * (p.params.ip / 9), 22), Math.floor(p.line) + 1);
+          else if (p.marketType === "combo") {
+            const hArr = binomialPMFArray(p.params.PA, p.params.hitProb);
+            const rArr = poissonPMFArray(p.params.meanRuns, 5);
+            const rbiArr = poissonPMFArray(p.params.meanRBI, 5);
+            probOver = sfFromPMF(convolve(convolve(hArr, rArr), rbiArr), Math.floor(p.line) + 1);
+          } else {
+            let m = p.marketType === "rbis" ? p.params.meanRBI : (p.marketType === "hr" ? p.params.meanHR : p.params.meanRuns);
+            probOver = sfFromPMF(poissonPMFArray(m, 6), Math.floor(p.line) + 1);
+          }
+        }
+
+        const fair = devigPair(p.oddsOver, p.oddsUnder);
+        const decOver = toDecimal(p.oddsOver), decUnder = toDecimal(p.oddsUnder);
+        const calcKelly = (p, d) => (!d || d <= 1) ? 0 : Math.max(0, ((d - 1) * p - (1 - p)) / (d - 1));
+
+        return {
+          ...p, probOver, probUnder: 1 - probOver,
+          edgeOver: fair.over ? probOver - fair.over : 0, edgeUnder: fair.under ? (1 - probOver) - fair.under : 0,
+          kOver: calcKelly(probOver, decOver) * 0.25 * (parseFloat(bankroll) || 0),
+          kUnder: calcKelly(1 - probOver, decUnder) * 0.25 * (parseFloat(bankroll) || 0)
+        };
+      });
+      return { ...game, props: evalProps };
+    });
+  }, [slate, bankroll]);
+
+  const activeG = useMemo(() => evaluatedSlate.find(g => g.id === activeGameId) || evaluatedSlate[0], [evaluatedSlate, activeGameId]);
+  const activeP = useMemo(() => activeG?.props.find(p => p.id === activePropId) || activeG?.props[0], [activeG, activePropId]);
+
+  const updatePropParam = (id, field, v) => {
+    setSlate(prev => prev.map(g => g.id === activeGameId ? { ...g, props: g.props.map(p => p.id === id ? { ...p, params: { ...p.params, [field]: parseFloat(v) || 0 } } : p) } : g));
+  };
+
+  return (
+    <div className="h-screen flex flex-col p-4 bg-[#020617] text-slate-100 overflow-hidden text-xs">
+      <header className="flex justify-between items-center border-b border-slate-800 pb-3 mb-3">
+        <div>
+          <h1 className="text-lg font-black tracking-tight flex items-center gap-2 text-white">
+            <span className="bg-lime-400 text-black text-[10px] px-1.5 py-0.5 rounded font-mono font-bold">LIVE AUTOMATION</span>
+            Quantum Terminal Pro — Pipeline Automatizado
+          </h1>
+          <p className="text-[11px] text-slate-400 font-mono">Monitoreo cuántico en tiempo real conectado a bases de datos autónomas</p>
+        </div>
+        <div className="flex items-center gap-2 font-mono bg-slate-900/80 p-1.5 rounded border border-slate-700">
+          <span>Bankroll $:</span>
+          <input type="text" value={bankroll} onChange={e => setBankroll(e.target.value)} className="w-20 bg-slate-950 border border-slate-700 rounded px-1 text-center text-lime-400 font-bold font-mono" />
+        </div>
+      </header>
+
+      <div className="flex flex-1 gap-3 overflow-hidden min-h-0">
+        {/* PANEL IZQUIERDO: PARTIDOS + INYECTOR */}
+        <div className="w-1/4 bg-slate-900/40 border border-slate-800 rounded-xl flex flex-col overflow-hidden">
+          <div className="bg-slate-900 px-3 py-2 text-[10px] uppercase font-mono tracking-wider font-bold text-slate-400 border-b border-slate-800">Pizarra Activa</div>
+          <div className="flex-1 overflow-y-auto divide-y divide-slate-800">
+            {evaluatedSlate.map(g => (
+              <div key={g.id} onClick={() => { setActiveGameId(g.id); setActivePropId(g.props[0]?.id || ""); }} className={`p-3 cursor-pointer ${g.id === activeGameId ? "bg-slate-800/60 border-l-4 border-lime-400" : "hover:bg-slate-900/30"}`}>
+                <span className={`text-[9px] font-mono px-1 rounded font-bold ${g.sport === 'soccer' ? "bg-cyan-500/10 text-cyan-400" : "bg-amber-500/10 text-amber-400"}`}>{g.sport.toUpperCase()}</span>
+                <div className="font-bold text-white mt-1">{g.matchup}</div>
+                <div className="text-[10px] text-slate-500 mt-0.5">{g.props.length} Mercados</div>
+              </div>
+            ))}
+          </div>
+          <div className="p-3 bg-slate-950/80 border-t border-slate-800 space-y-2">
+            <span className="text-[10px] uppercase text-lime-400 font-bold block">Inyectar Manual Alternativo</span>
+            <input type="text" placeholder="Ej: NY Yankees vs Boston" value={newMatchup} onChange={e => setNewMatchup(e.target.value)} className="w-full bg-slate-900 border border-slate-700 rounded p-1 text-white font-mono text-xs" />
+            <div className="flex gap-2">
+              <select value={newSport} onChange={e => setNewSport(e.target.value)} className="bg-slate-900 border border-slate-700 rounded p-1 text-white flex-1 font-mono text-xs">
+                <option value="mlb">⚾ MLB</option>
+                <option value="soccer">⚽ FÚTBOL</option>
+              </select>
+              <button onClick={injectGame} className="bg-lime-500 hover:bg-lime-600 text-black font-bold px-3 rounded text-xs font-mono">Crear</button>
+            </div>
+          </div>
+        </div>
+
+        {/* PANEL CENTRAL: TABLA DE PROPS */}
+        <div className="flex-1 bg-slate-900/40 border border-slate-800 rounded-xl flex flex-col overflow-hidden">
+          <div className="bg-slate-900 px-4 py-2 font-bold uppercase border-b border-slate-800 text-slate-300 tracking-wider">
+            {activeG ? activeG.matchup : "Selecciona un partido"} — Matriz Analítica
+          </div>
+          <div className="flex-1 overflow-y-auto">
+            {activeG?.props.length === 0 ? (
+              <div className="p-8 text-center text-slate-500 font-mono">No hay posiciones cargadas para este evento.</div>
+            ) : (
+              <table className="w-full text-left border-collapse font-mono text-xs">
+                <thead>
+                  <tr className="bg-slate-950 text-[10px] text-slate-400 uppercase tracking-wider border-b border-slate-800">
+                    <th className="p-2.5">Atleta / Mercado</th>
+                    <th className="p-2.5">Línea</th>
+                    <th className="p-2.5 text-center">Cuotas Libro</th>
+                    <th className="p-2.5 text-right">Probabilidad Proyectada</th>
+                    <th className="p-2.5 text-right">Edge Limpio</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-800">
+                  {activeG?.props.map(p => (
+                    <tr key={p.id} onClick={() => setActivePropId(p.id)} className={`cursor-pointer ${p.id === activePropId ? "bg-slate-800/50" : "hover:bg-slate-900/20"}`}>
+                      <td className="p-2.5 font-bold text-white">{p.name} <span className="text-[9px] bg-slate-800 px-1 rounded text-slate-400">{p.team}</span></td>
+                      <td className="p-2.5"><span className="bg-slate-950 px-2 py-0.5 rounded border border-slate-800 text-slate-300">{MARKETS_MAP[p.marketType]} <strong className="text-lime-400">{p.line}</strong></span></td>
+                      <td className="p-2.5 text-center text-slate-400">O: <span className="text-lime-400">{p.oddsOver}</span> | U: <span className="text-red-400">{p.oddsUnder}</span></td>
+                      <td className="p-2.5 text-right text-slate-300">O: {(p.probOver * 100).toFixed(1)}% | U: {(p.probUnder * 100).toFixed(1)}%</td>
+                      <td className="p-2.5 text-right font-bold text-lime-400">
+                        {p.edgeOver > p.edgeUnder ? `+${(p.edgeOver * 100).toFixed(1)}% (O)` : `+${(p.edgeUnder * 100).toFixed(1)}% (U)`}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            )}
+          </div>
+        </div>
+
+        {/* PANEL DERECHO: DETALLES MATEMÁTICOS */}
+        <div className="w-1/4 bg-slate-900/40 border border-slate-800 rounded-xl p-3 flex flex-col gap-3 overflow-y-auto">
+          {activeP ? (
+            <div className="border-b border-slate-800 pb-2 space-y-2 font-mono">
+              <span className="text-[9px] bg-lime-400/10 text-lime-400 px-1.5 py-0.5 rounded font-bold uppercase">Métricas de Proyección</span>
+              <h3 className="text-xs font-bold text-white">{activeP.name} ({activeP.team})</h3>
+              
+              {activeG.sport === "soccer" ? (
+                <div className="space-y-2 text-[11px]">
+                  {!(["match1X", "match2X", "matchDraw", "totalGoals", "goalsT1", "goalsT2"].includes(activeP.marketType)) && (
+                    <div>
+                      <label className="text-slate-400 block mb-0.5">Media Jugador:</label>
+                      <input type="text" value={activeP.params.soccerMean} onChange={e => updatePropParam(activeP.id, "soccerMean", e.target.value)} className="w-full bg-slate-950 border border-slate-700 rounded px-1.5 py-0.5 text-white" />
+                    </div>
+                  )}
+                  <div className="grid grid-cols-2 gap-2">
+                    <div>
+                      <label className="text-slate-400 block mb-0.5">Media Goles T1:</label>
+                      <input type="text" value={activeP.params.soccerT1GoalsMean} onChange={e => updatePropParam(activeP.id, "soccerT1GoalsMean", e.target.value)} className="w-full bg-slate-950 border border-slate-700 rounded text-center text-white" />
+                    </div>
+                    <div>
+                      <label className="text-slate-400 block mb-0.5">Media Goles T2:</label>
+                      <input type="text" value={activeP.params.soccerT2GoalsMean} onChange={e => updatePropParam(activeP.id, "soccerT2GoalsMean", e.target.value)} className="w-full bg-slate-950 border border-slate-700 rounded text-center text-white" />
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <div className="space-y-2 text-[11px]">
+                  {activeP.marketType === "pitcherKs" ? (
+                    <div className="grid grid-cols-2 gap-2">
+                      <div>
+                        <label className="text-slate-400 block mb-0.5">K/9 Ratio:</label>
+                        <input type="text" value={activeP.params.k9} onChange={e => updatePropParam(activeP.id, "k9", e.target.value)} className="w-full bg-slate-950 border border-slate-700 rounded text-center text-white" />
+                      </div>
+                      <div>
+                        <label className="text-slate-400 block mb-0.5">Innings:</label>
+                        <input type="text" value={activeP.params.ip} onChange={e => updatePropParam(activeP.id, "ip", e.target.value)} className="w-full bg-slate-950 border border-slate-700 rounded text-center text-white" />
+                      </div>
+                    </div>
+                  ) : (
+                    <div className="space-y-1.5">
+                      <div className="grid grid-cols-2 gap-2">
+                        <div>
+                          <label className="text-slate-400 block mb-0.5">Turnos PA:</label>
+                          <input type="text" value={activeP.params.PA} onChange={e => updatePropParam(activeP.id, "PA", e.target.value)} className="w-full bg-slate-950 border border-slate-700 rounded text-center text-white" />
+                        </div>
+                        <div>
+                          <label className="text-slate-400 block mb-0.5">Hit Prob:</label>
+                          <input type="text" value={activeP.params.hitProb} onChange={e => updatePropParam(activeP.id, "hitProb", e.target.value)} className="w-full bg-slate-950 border border-slate-700 rounded text-center text-white" />
+                        </div>
+                      </div>
+                      <div className="grid grid-cols-3 gap-1">
+                        <div>
+                          <label className="text-[10px] text-slate-400 block">Runs M:</label>
+                          <input type="text" value={activeP.params.meanRuns} onChange={e => updatePropParam(activeP.id, "meanRuns", e.target.value)} className="w-full bg-slate-950 border border-slate-700 rounded text-center text-white text-[10px]" />
+                        </div>
+                        <div>
+                          <label className="text-[10px] text-slate-400 block">RBI M:</label>
+                          <input type="text" value={activeP.params.meanRBI} onChange={e => updatePropParam(activeP.id, "meanRBI", e.target.value)} className="w-full bg-slate-950 border border-slate-700 rounded text-center text-white text-[10px]" />
+                        </div>
+                        <div>
+                          <label className="text-[10px] text-slate-400 block">HR M:</label>
+                          <input type="text" value={activeP.params.meanHR} onChange={e => updatePropParam(activeP.id, "meanHR", e.target.value)} className="w-full bg-slate-950 border border-slate-700 rounded text-center text-white text-[10px]" />
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              )}
+
+              <div className="bg-slate-950 p-2 rounded border border-slate-800 text-[11px] mt-2">
+                <div className="text-[9px] uppercase font-bold text-center text-slate-400 mb-1">Fracción Criterio Kelly (25%)</div>
+                <div className="flex justify-between"><span>Sugerido OVER:</span><span className="text-lime-400 font-bold">${activeP.kOver.toFixed(2)}</span></div>
+                <div className="flex justify-between mt-0.5"><span>Sugerido UNDER:</span><span className="text-red-400 font-bold">${activeP.kUnder.toFixed(2)}</span></div>
+              </div>
+            </div>
+          ) : <div className="text-slate-500 font-mono text-center">Ninguna línea seleccionada</div>}
+
+          <div className="mt-auto bg-slate-950 p-3 rounded-xl border border-slate-800 space-y-2">
+            <span className="text-[10px] font-mono text-lime-400 font-bold uppercase block">Inyección Manual Forzada</span>
+            <div className="grid grid-cols-2 gap-2">
+              <input type="text" placeholder="Nombre" value={pName} onChange={e => setPName(e.target.value)} className="bg-slate-900 border border-slate-700 rounded p-1 text-white font-mono" />
+              <input type="text" placeholder="Equipo" value={pTeam} onChange={e => setPTeam(e.target.value)} className="bg-slate-900 border border-slate-700 rounded p-1 text-white font-mono" />
+            </div>
+            <div>
+              <select value={pMarket} onChange={e => setPMarket(e.target.value)} className="w-full bg-slate-900 border border-slate-700 rounded p-1 text-white font-mono">
+                {Object.keys(MARKETS_MAP).map(k => (
+                  <option key={k} value={k}>{MARKETS_MAP[k]}</option>
+                ))}
+              </select>
+            </div>
+            <div className="grid grid-cols-3 gap-1">
+              <input type="text" placeholder="Línea" value={pLine} onChange={e => setPLine(e.target.value)} className="bg-slate-900 border border-slate-700 rounded p-0.5 text-center text-white" />
+              <input type="text" placeholder="Odds O" value={pOver} onChange={e => setPOver(e.target.value)} className="bg-slate-900 border border-slate-700 rounded p-0.5 text-center text-white" />
+              <input type="text" placeholder="Odds U" value={pUnder} onChange={e => setPUnder(e.target.value)} className="bg-slate-900 border border-slate-700 rounded p-0.5 text-center text-white" />
+            </div>
+            <button onClick={injectProp} className="w-full bg-lime-400 hover:bg-lime-500 text-black font-black py-1 rounded font-mono text-xs uppercase tracking-wider">Inyectar Prop</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+</script>
+</body>
+</html>
