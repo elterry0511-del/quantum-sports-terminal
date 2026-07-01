@@ -3,7 +3,7 @@ import datetime
 import requests
 
 # 🔑 PEGA TU API KEY DE THE ODDS API AQUÍ ABAJO:
-API_KEY = "16e6f3b429dd47cfa61e9667e07ecc76"
+API_KEY =
 
 # 🎯 DICCIONARIO INTELIGENTE: Vincula jugadores reales a sus equipos reales
 ESTRELLAS_MUNDIAL = {
