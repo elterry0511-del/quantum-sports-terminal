@@ -7,31 +7,31 @@
     "props": [
       {
         "id": "p_g_mlb_824818_hits",
-        "name": "Leadoff Hitter Pro",
+        "name": "R. Acuña",
         "team": "CHI",
         "marketType": "hits",
         "line": 0.5,
-        "oddsOver": "-145",
-        "oddsUnder": "+115",
+        "oddsOver": "-110",
+        "oddsUnder": "-110",
         "params": {
-          "PA": 4.1,
-          "hitProb": 0.265,
+          "PA": 4.4,
+          "hitProb": 0.254,
           "meanRuns": 0.45,
-          "meanRBI": 0.35,
-          "meanHR": 0.05
+          "meanRBI": 0.4,
+          "meanHR": 0.12
         }
       },
       {
         "id": "p_g_mlb_824818_pitcher",
-        "name": "Starting Pitcher Ace",
+        "name": "M. King",
         "team": "BAL",
         "marketType": "pitcherKs",
         "line": 5.5,
-        "oddsOver": "-110",
-        "oddsUnder": "-110",
+        "oddsOver": "-145",
+        "oddsUnder": "+115",
         "params": {
-          "k9": 9.5,
-          "ip": 5.2,
+          "k9": 10.3,
+          "ip": 6.0,
           "PA": 0,
           "hitProb": 0,
           "meanRuns": 0,
@@ -41,17 +41,17 @@
       },
       {
         "id": "p_g_mlb_824818_combo",
-        "name": "Cleanup Slugger",
+        "name": "Lineup Slugger Pro",
         "team": "CHI",
         "marketType": "combo",
         "line": 1.5,
-        "oddsOver": "-120",
-        "oddsUnder": "-110",
+        "oddsOver": "-115",
+        "oddsUnder": "-115",
         "params": {
           "PA": 4.2,
-          "hitProb": 0.24,
+          "hitProb": 0.244,
           "meanRuns": 0.55,
-          "meanRBI": 0.65,
+          "meanRBI": 0.6,
           "meanHR": 0.15
         }
       }
@@ -65,31 +65,31 @@
     "props": [
       {
         "id": "p_g_mlb_824419_hits",
-        "name": "Leadoff Hitter Pro",
+        "name": "V. Guerrero",
         "team": "TEX",
         "marketType": "hits",
         "line": 0.5,
         "oddsOver": "-145",
         "oddsUnder": "+115",
         "params": {
-          "PA": 4.1,
-          "hitProb": 0.265,
+          "PA": 4.4,
+          "hitProb": 0.237,
           "meanRuns": 0.45,
-          "meanRBI": 0.35,
-          "meanHR": 0.05
+          "meanRBI": 0.4,
+          "meanHR": 0.12
         }
       },
       {
         "id": "p_g_mlb_824419_pitcher",
-        "name": "Starting Pitcher Ace",
+        "name": "C. Burnes",
         "team": "CLE",
         "marketType": "pitcherKs",
         "line": 5.5,
-        "oddsOver": "-110",
-        "oddsUnder": "-110",
+        "oddsOver": "-130",
+        "oddsUnder": "+100",
         "params": {
-          "k9": 9.5,
-          "ip": 5.2,
+          "k9": 11.0,
+          "ip": 6.1,
           "PA": 0,
           "hitProb": 0,
           "meanRuns": 0,
@@ -99,17 +99,17 @@
       },
       {
         "id": "p_g_mlb_824419_combo",
-        "name": "Cleanup Slugger",
+        "name": "Lineup Slugger Pro",
         "team": "TEX",
         "marketType": "combo",
         "line": 1.5,
-        "oddsOver": "-120",
-        "oddsUnder": "-110",
+        "oddsOver": "-115",
+        "oddsUnder": "-115",
         "params": {
           "PA": 4.2,
-          "hitProb": 0.24,
+          "hitProb": 0.269,
           "meanRuns": 0.55,
-          "meanRBI": 0.65,
+          "meanRBI": 0.6,
           "meanHR": 0.15
         }
       }
@@ -123,31 +123,31 @@
     "props": [
       {
         "id": "p_g_mlb_824740_hits",
-        "name": "Leadoff Hitter Pro",
+        "name": "M. Betts",
         "team": "WAS",
         "marketType": "hits",
         "line": 0.5,
         "oddsOver": "-145",
         "oddsUnder": "+115",
         "params": {
-          "PA": 4.1,
-          "hitProb": 0.265,
+          "PA": 4.0,
+          "hitProb": 0.241,
           "meanRuns": 0.45,
-          "meanRBI": 0.35,
-          "meanHR": 0.05
+          "meanRBI": 0.4,
+          "meanHR": 0.12
         }
       },
       {
         "id": "p_g_mlb_824740_pitcher",
-        "name": "Starting Pitcher Ace",
+        "name": "G. Cole",
         "team": "BOS",
         "marketType": "pitcherKs",
         "line": 5.5,
-        "oddsOver": "-110",
-        "oddsUnder": "-110",
+        "oddsOver": "-115",
+        "oddsUnder": "-115",
         "params": {
-          "k9": 9.5,
-          "ip": 5.2,
+          "k9": 9.6,
+          "ip": 5.3,
           "PA": 0,
           "hitProb": 0,
           "meanRuns": 0,
@@ -157,17 +157,17 @@
       },
       {
         "id": "p_g_mlb_824740_combo",
-        "name": "Cleanup Slugger",
+        "name": "Lineup Slugger Pro",
         "team": "WAS",
         "marketType": "combo",
         "line": 1.5,
-        "oddsOver": "-120",
-        "oddsUnder": "-110",
+        "oddsOver": "-130",
+        "oddsUnder": "+100",
         "params": {
           "PA": 4.2,
-          "hitProb": 0.24,
+          "hitProb": 0.264,
           "meanRuns": 0.55,
-          "meanRBI": 0.65,
+          "meanRBI": 0.6,
           "meanHR": 0.15
         }
       }
@@ -181,31 +181,31 @@
     "props": [
       {
         "id": "p_g_mlb_823530_hits",
-        "name": "Leadoff Hitter Pro",
+        "name": "V. Guerrero",
         "team": "DET",
         "marketType": "hits",
         "line": 0.5,
-        "oddsOver": "-145",
-        "oddsUnder": "+115",
+        "oddsOver": "-110",
+        "oddsUnder": "-110",
         "params": {
-          "PA": 4.1,
-          "hitProb": 0.265,
+          "PA": 4.0,
+          "hitProb": 0.236,
           "meanRuns": 0.45,
-          "meanRBI": 0.35,
-          "meanHR": 0.05
+          "meanRBI": 0.4,
+          "meanHR": 0.12
         }
       },
       {
         "id": "p_g_mlb_823530_pitcher",
-        "name": "Starting Pitcher Ace",
+        "name": "Z. Wheeler",
         "team": "NEW",
         "marketType": "pitcherKs",
         "line": 5.5,
-        "oddsOver": "-110",
-        "oddsUnder": "-110",
+        "oddsOver": "-130",
+        "oddsUnder": "+100",
         "params": {
-          "k9": 9.5,
-          "ip": 5.2,
+          "k9": 9.6,
+          "ip": 6.0,
           "PA": 0,
           "hitProb": 0,
           "meanRuns": 0,
@@ -215,17 +215,17 @@
       },
       {
         "id": "p_g_mlb_823530_combo",
-        "name": "Cleanup Slugger",
+        "name": "Lineup Slugger Pro",
         "team": "DET",
         "marketType": "combo",
         "line": 1.5,
-        "oddsOver": "-120",
-        "oddsUnder": "-110",
+        "oddsOver": "-115",
+        "oddsUnder": "-115",
         "params": {
           "PA": 4.2,
-          "hitProb": 0.24,
+          "hitProb": 0.273,
           "meanRuns": 0.55,
-          "meanRBI": 0.65,
+          "meanRBI": 0.6,
           "meanHR": 0.15
         }
       }
@@ -239,31 +239,31 @@
     "props": [
       {
         "id": "p_g_mlb_824660_hits",
-        "name": "Leadoff Hitter Pro",
+        "name": "R. Acuña",
         "team": "SAN",
         "marketType": "hits",
         "line": 0.5,
-        "oddsOver": "-145",
-        "oddsUnder": "+115",
+        "oddsOver": "-110",
+        "oddsUnder": "-110",
         "params": {
-          "PA": 4.1,
-          "hitProb": 0.265,
+          "PA": 4.0,
+          "hitProb": 0.241,
           "meanRuns": 0.45,
-          "meanRBI": 0.35,
-          "meanHR": 0.05
+          "meanRBI": 0.4,
+          "meanHR": 0.12
         }
       },
       {
         "id": "p_g_mlb_824660_pitcher",
-        "name": "Starting Pitcher Ace",
+        "name": "G. Cole",
         "team": "CHI",
         "marketType": "pitcherKs",
         "line": 5.5,
-        "oddsOver": "-110",
-        "oddsUnder": "-110",
+        "oddsOver": "+105",
+        "oddsUnder": "-135",
         "params": {
           "k9": 9.5,
-          "ip": 5.2,
+          "ip": 6.2,
           "PA": 0,
           "hitProb": 0,
           "meanRuns": 0,
@@ -273,17 +273,17 @@
       },
       {
         "id": "p_g_mlb_824660_combo",
-        "name": "Cleanup Slugger",
+        "name": "Lineup Slugger Pro",
         "team": "SAN",
         "marketType": "combo",
         "line": 1.5,
-        "oddsOver": "-120",
+        "oddsOver": "-110",
         "oddsUnder": "-110",
         "params": {
           "PA": 4.2,
-          "hitProb": 0.24,
+          "hitProb": 0.25,
           "meanRuns": 0.55,
-          "meanRBI": 0.65,
+          "meanRBI": 0.6,
           "meanHR": 0.15
         }
       }
@@ -297,7 +297,7 @@
     "props": [
       {
         "id": "p_g_mlb_822791_hits",
-        "name": "Leadoff Hitter Pro",
+        "name": "V. Guerrero",
         "team": "NEW",
         "marketType": "hits",
         "line": 0.5,
@@ -305,23 +305,23 @@
         "oddsUnder": "+115",
         "params": {
           "PA": 4.1,
-          "hitProb": 0.265,
+          "hitProb": 0.244,
           "meanRuns": 0.45,
-          "meanRBI": 0.35,
-          "meanHR": 0.05
+          "meanRBI": 0.4,
+          "meanHR": 0.12
         }
       },
       {
         "id": "p_g_mlb_822791_pitcher",
-        "name": "Starting Pitcher Ace",
+        "name": "Z. Wheeler",
         "team": "TOR",
         "marketType": "pitcherKs",
         "line": 5.5,
-        "oddsOver": "-110",
-        "oddsUnder": "-110",
+        "oddsOver": "-115",
+        "oddsUnder": "-115",
         "params": {
-          "k9": 9.5,
-          "ip": 5.2,
+          "k9": 11.2,
+          "ip": 5.1,
           "PA": 0,
           "hitProb": 0,
           "meanRuns": 0,
@@ -331,17 +331,17 @@
       },
       {
         "id": "p_g_mlb_822791_combo",
-        "name": "Cleanup Slugger",
+        "name": "Lineup Slugger Pro",
         "team": "NEW",
         "marketType": "combo",
         "line": 1.5,
-        "oddsOver": "-120",
-        "oddsUnder": "-110",
+        "oddsOver": "-130",
+        "oddsUnder": "+100",
         "params": {
           "PA": 4.2,
-          "hitProb": 0.24,
+          "hitProb": 0.262,
           "meanRuns": 0.55,
-          "meanRBI": 0.65,
+          "meanRBI": 0.6,
           "meanHR": 0.15
         }
       }
@@ -355,31 +355,31 @@
     "props": [
       {
         "id": "p_g_mlb_823446_hits",
-        "name": "Leadoff Hitter Pro",
+        "name": "M. Betts",
         "team": "PIT",
         "marketType": "hits",
         "line": 0.5,
-        "oddsOver": "-145",
-        "oddsUnder": "+115",
+        "oddsOver": "-110",
+        "oddsUnder": "-110",
         "params": {
           "PA": 4.1,
-          "hitProb": 0.265,
+          "hitProb": 0.28,
           "meanRuns": 0.45,
-          "meanRBI": 0.35,
-          "meanHR": 0.05
+          "meanRBI": 0.4,
+          "meanHR": 0.12
         }
       },
       {
         "id": "p_g_mlb_823446_pitcher",
-        "name": "Starting Pitcher Ace",
+        "name": "L. Castillo",
         "team": "PHI",
         "marketType": "pitcherKs",
         "line": 5.5,
-        "oddsOver": "-110",
-        "oddsUnder": "-110",
+        "oddsOver": "-115",
+        "oddsUnder": "-115",
         "params": {
-          "k9": 9.5,
-          "ip": 5.2,
+          "k9": 11.4,
+          "ip": 5.1,
           "PA": 0,
           "hitProb": 0,
           "meanRuns": 0,
@@ -389,17 +389,17 @@
       },
       {
         "id": "p_g_mlb_823446_combo",
-        "name": "Cleanup Slugger",
+        "name": "Lineup Slugger Pro",
         "team": "PIT",
         "marketType": "combo",
         "line": 1.5,
-        "oddsOver": "-120",
-        "oddsUnder": "-110",
+        "oddsOver": "+105",
+        "oddsUnder": "-135",
         "params": {
           "PA": 4.2,
-          "hitProb": 0.24,
+          "hitProb": 0.256,
           "meanRuns": 0.55,
-          "meanRBI": 0.65,
+          "meanRBI": 0.6,
           "meanHR": 0.15
         }
       }
@@ -413,31 +413,31 @@
     "props": [
       {
         "id": "p_g_mlb_824905_hits",
-        "name": "Leadoff Hitter Pro",
+        "name": "J. Soto",
         "team": "ST.",
         "marketType": "hits",
         "line": 0.5,
-        "oddsOver": "-145",
-        "oddsUnder": "+115",
+        "oddsOver": "-130",
+        "oddsUnder": "+100",
         "params": {
-          "PA": 4.1,
-          "hitProb": 0.265,
+          "PA": 4.3,
+          "hitProb": 0.28,
           "meanRuns": 0.45,
-          "meanRBI": 0.35,
-          "meanHR": 0.05
+          "meanRBI": 0.4,
+          "meanHR": 0.12
         }
       },
       {
         "id": "p_g_mlb_824905_pitcher",
-        "name": "Starting Pitcher Ace",
+        "name": "M. King",
         "team": "ATL",
         "marketType": "pitcherKs",
         "line": 5.5,
         "oddsOver": "-110",
         "oddsUnder": "-110",
         "params": {
-          "k9": 9.5,
-          "ip": 5.2,
+          "k9": 8.9,
+          "ip": 6.2,
           "PA": 0,
           "hitProb": 0,
           "meanRuns": 0,
@@ -447,17 +447,17 @@
       },
       {
         "id": "p_g_mlb_824905_combo",
-        "name": "Cleanup Slugger",
+        "name": "Lineup Slugger Pro",
         "team": "ST.",
         "marketType": "combo",
         "line": 1.5,
-        "oddsOver": "-120",
-        "oddsUnder": "-110",
+        "oddsOver": "-145",
+        "oddsUnder": "+115",
         "params": {
           "PA": 4.2,
-          "hitProb": 0.24,
+          "hitProb": 0.273,
           "meanRuns": 0.55,
-          "meanRBI": 0.65,
+          "meanRBI": 0.6,
           "meanHR": 0.15
         }
       }
@@ -471,31 +471,31 @@
     "props": [
       {
         "id": "p_g_mlb_824094_hits",
-        "name": "Leadoff Hitter Pro",
+        "name": "M. Betts",
         "team": "TAM",
         "marketType": "hits",
         "line": 0.5,
-        "oddsOver": "-145",
-        "oddsUnder": "+115",
+        "oddsOver": "-115",
+        "oddsUnder": "-115",
         "params": {
-          "PA": 4.1,
-          "hitProb": 0.265,
+          "PA": 3.9,
+          "hitProb": 0.237,
           "meanRuns": 0.45,
-          "meanRBI": 0.35,
-          "meanHR": 0.05
+          "meanRBI": 0.4,
+          "meanHR": 0.12
         }
       },
       {
         "id": "p_g_mlb_824094_pitcher",
-        "name": "Starting Pitcher Ace",
+        "name": "L. Castillo",
         "team": "KAN",
         "marketType": "pitcherKs",
         "line": 5.5,
         "oddsOver": "-110",
         "oddsUnder": "-110",
         "params": {
-          "k9": 9.5,
-          "ip": 5.2,
+          "k9": 10.4,
+          "ip": 6.1,
           "PA": 0,
           "hitProb": 0,
           "meanRuns": 0,
@@ -505,17 +505,17 @@
       },
       {
         "id": "p_g_mlb_824094_combo",
-        "name": "Cleanup Slugger",
+        "name": "Lineup Slugger Pro",
         "team": "TAM",
         "marketType": "combo",
         "line": 1.5,
-        "oddsOver": "-120",
-        "oddsUnder": "-110",
+        "oddsOver": "-145",
+        "oddsUnder": "+115",
         "params": {
           "PA": 4.2,
-          "hitProb": 0.24,
+          "hitProb": 0.269,
           "meanRuns": 0.55,
-          "meanRBI": 0.65,
+          "meanRBI": 0.6,
           "meanHR": 0.15
         }
       }
@@ -529,31 +529,31 @@
     "props": [
       {
         "id": "p_g_mlb_824174_hits",
-        "name": "Leadoff Hitter Pro",
+        "name": "J. Soto",
         "team": "MIN",
         "marketType": "hits",
         "line": 0.5,
-        "oddsOver": "-145",
-        "oddsUnder": "+115",
+        "oddsOver": "+105",
+        "oddsUnder": "-135",
         "params": {
-          "PA": 4.1,
-          "hitProb": 0.265,
+          "PA": 4.3,
+          "hitProb": 0.26,
           "meanRuns": 0.45,
-          "meanRBI": 0.35,
-          "meanHR": 0.05
+          "meanRBI": 0.4,
+          "meanHR": 0.12
         }
       },
       {
         "id": "p_g_mlb_824174_pitcher",
-        "name": "Starting Pitcher Ace",
+        "name": "M. King",
         "team": "HOU",
         "marketType": "pitcherKs",
         "line": 5.5,
-        "oddsOver": "-110",
-        "oddsUnder": "-110",
+        "oddsOver": "-130",
+        "oddsUnder": "+100",
         "params": {
-          "k9": 9.5,
-          "ip": 5.2,
+          "k9": 8.6,
+          "ip": 5.9,
           "PA": 0,
           "hitProb": 0,
           "meanRuns": 0,
@@ -563,17 +563,17 @@
       },
       {
         "id": "p_g_mlb_824174_combo",
-        "name": "Cleanup Slugger",
+        "name": "Lineup Slugger Pro",
         "team": "MIN",
         "marketType": "combo",
         "line": 1.5,
-        "oddsOver": "-120",
-        "oddsUnder": "-110",
+        "oddsOver": "-115",
+        "oddsUnder": "-115",
         "params": {
           "PA": 4.2,
-          "hitProb": 0.24,
+          "hitProb": 0.27,
           "meanRuns": 0.55,
-          "meanRBI": 0.65,
+          "meanRBI": 0.6,
           "meanHR": 0.15
         }
       }
@@ -587,31 +587,31 @@
     "props": [
       {
         "id": "p_g_mlb_823767_hits",
-        "name": "Leadoff Hitter Pro",
+        "name": "V. Guerrero",
         "team": "CIN",
         "marketType": "hits",
         "line": 0.5,
         "oddsOver": "-145",
         "oddsUnder": "+115",
         "params": {
-          "PA": 4.1,
-          "hitProb": 0.265,
+          "PA": 4.4,
+          "hitProb": 0.247,
           "meanRuns": 0.45,
-          "meanRBI": 0.35,
-          "meanHR": 0.05
+          "meanRBI": 0.4,
+          "meanHR": 0.12
         }
       },
       {
         "id": "p_g_mlb_823767_pitcher",
-        "name": "Starting Pitcher Ace",
+        "name": "F. Valdez",
         "team": "MIL",
         "marketType": "pitcherKs",
         "line": 5.5,
         "oddsOver": "-110",
         "oddsUnder": "-110",
         "params": {
-          "k9": 9.5,
-          "ip": 5.2,
+          "k9": 9.3,
+          "ip": 6.0,
           "PA": 0,
           "hitProb": 0,
           "meanRuns": 0,
@@ -621,17 +621,17 @@
       },
       {
         "id": "p_g_mlb_823767_combo",
-        "name": "Cleanup Slugger",
+        "name": "Lineup Slugger Pro",
         "team": "CIN",
         "marketType": "combo",
         "line": 1.5,
-        "oddsOver": "-120",
-        "oddsUnder": "-110",
+        "oddsOver": "+105",
+        "oddsUnder": "-135",
         "params": {
           "PA": 4.2,
-          "hitProb": 0.24,
+          "hitProb": 0.247,
           "meanRuns": 0.55,
-          "meanRBI": 0.65,
+          "meanRBI": 0.6,
           "meanHR": 0.15
         }
       }
@@ -645,31 +645,31 @@
     "props": [
       {
         "id": "p_g_mlb_824337_hits",
-        "name": "Leadoff Hitter Pro",
+        "name": "S. Ohtani",
         "team": "MIA",
         "marketType": "hits",
         "line": 0.5,
-        "oddsOver": "-145",
-        "oddsUnder": "+115",
+        "oddsOver": "-130",
+        "oddsUnder": "+100",
         "params": {
-          "PA": 4.1,
-          "hitProb": 0.265,
+          "PA": 3.9,
+          "hitProb": 0.25,
           "meanRuns": 0.45,
-          "meanRBI": 0.35,
-          "meanHR": 0.05
+          "meanRBI": 0.4,
+          "meanHR": 0.12
         }
       },
       {
         "id": "p_g_mlb_824337_pitcher",
-        "name": "Starting Pitcher Ace",
+        "name": "F. Valdez",
         "team": "COL",
         "marketType": "pitcherKs",
         "line": 5.5,
-        "oddsOver": "-110",
-        "oddsUnder": "-110",
+        "oddsOver": "-145",
+        "oddsUnder": "+115",
         "params": {
-          "k9": 9.5,
-          "ip": 5.2,
+          "k9": 10.2,
+          "ip": 6.1,
           "PA": 0,
           "hitProb": 0,
           "meanRuns": 0,
@@ -679,17 +679,17 @@
       },
       {
         "id": "p_g_mlb_824337_combo",
-        "name": "Cleanup Slugger",
+        "name": "Lineup Slugger Pro",
         "team": "MIA",
         "marketType": "combo",
         "line": 1.5,
-        "oddsOver": "-120",
-        "oddsUnder": "-110",
+        "oddsOver": "-130",
+        "oddsUnder": "+100",
         "params": {
           "PA": 4.2,
-          "hitProb": 0.24,
+          "hitProb": 0.269,
           "meanRuns": 0.55,
-          "meanRBI": 0.65,
+          "meanRBI": 0.6,
           "meanHR": 0.15
         }
       }
@@ -703,31 +703,31 @@
     "props": [
       {
         "id": "p_g_mlb_824985_hits",
-        "name": "Leadoff Hitter Pro",
+        "name": "F. Lindor",
         "team": "LOS",
         "marketType": "hits",
         "line": 0.5,
-        "oddsOver": "-145",
-        "oddsUnder": "+115",
+        "oddsOver": "+105",
+        "oddsUnder": "-135",
         "params": {
-          "PA": 4.1,
-          "hitProb": 0.265,
+          "PA": 4.3,
+          "hitProb": 0.268,
           "meanRuns": 0.45,
-          "meanRBI": 0.35,
-          "meanHR": 0.05
+          "meanRBI": 0.4,
+          "meanHR": 0.12
         }
       },
       {
         "id": "p_g_mlb_824985_pitcher",
-        "name": "Starting Pitcher Ace",
+        "name": "Z. Wheeler",
         "team": "ATH",
         "marketType": "pitcherKs",
         "line": 5.5,
         "oddsOver": "-110",
         "oddsUnder": "-110",
         "params": {
-          "k9": 9.5,
-          "ip": 5.2,
+          "k9": 8.7,
+          "ip": 5.5,
           "PA": 0,
           "hitProb": 0,
           "meanRuns": 0,
@@ -737,17 +737,17 @@
       },
       {
         "id": "p_g_mlb_824985_combo",
-        "name": "Cleanup Slugger",
+        "name": "Lineup Slugger Pro",
         "team": "LOS",
         "marketType": "combo",
         "line": 1.5,
-        "oddsOver": "-120",
+        "oddsOver": "-110",
         "oddsUnder": "-110",
         "params": {
           "PA": 4.2,
-          "hitProb": 0.24,
+          "hitProb": 0.256,
           "meanRuns": 0.55,
-          "meanRBI": 0.65,
+          "meanRBI": 0.6,
           "meanHR": 0.15
         }
       }
@@ -761,31 +761,31 @@
     "props": [
       {
         "id": "p_g_mlb_825064_hits",
-        "name": "Leadoff Hitter Pro",
+        "name": "B. Witt Jr",
         "team": "SAN",
         "marketType": "hits",
         "line": 0.5,
         "oddsOver": "-145",
         "oddsUnder": "+115",
         "params": {
-          "PA": 4.1,
-          "hitProb": 0.265,
+          "PA": 4.4,
+          "hitProb": 0.255,
           "meanRuns": 0.45,
-          "meanRBI": 0.35,
-          "meanHR": 0.05
+          "meanRBI": 0.4,
+          "meanHR": 0.12
         }
       },
       {
         "id": "p_g_mlb_825064_pitcher",
-        "name": "Starting Pitcher Ace",
+        "name": "T. Glasnow",
         "team": "ARI",
         "marketType": "pitcherKs",
         "line": 5.5,
         "oddsOver": "-110",
         "oddsUnder": "-110",
         "params": {
-          "k9": 9.5,
-          "ip": 5.2,
+          "k9": 8.7,
+          "ip": 5.5,
           "PA": 0,
           "hitProb": 0,
           "meanRuns": 0,
@@ -795,18 +795,218 @@
       },
       {
         "id": "p_g_mlb_825064_combo",
-        "name": "Cleanup Slugger",
+        "name": "Lineup Slugger Pro",
         "team": "SAN",
         "marketType": "combo",
         "line": 1.5,
-        "oddsOver": "-120",
+        "oddsOver": "-110",
         "oddsUnder": "-110",
         "params": {
           "PA": 4.2,
-          "hitProb": 0.24,
+          "hitProb": 0.243,
           "meanRuns": 0.55,
-          "meanRBI": 0.65,
+          "meanRBI": 0.6,
           "meanHR": 0.15
+        }
+      }
+    ]
+  },
+  {
+    "id": "g_foot_0",
+    "sport": "futbol",
+    "matchup": "Real Madrid vs Barcelona",
+    "short": "RMAvsFCB",
+    "props": [
+      {
+        "id": "p_g_foot_0_goles",
+        "name": "Goles Totales Partido",
+        "team": "TOTAL",
+        "marketType": "goals",
+        "line": 2.5,
+        "oddsOver": "-120",
+        "oddsUnder": "-105",
+        "params": {
+          "PA": 0,
+          "hitProb": 0,
+          "meanRuns": 2.85,
+          "meanRBI": 0,
+          "meanHR": 0
+        }
+      },
+      {
+        "id": "p_g_foot_0_corners",
+        "name": "Tiros de Esquina",
+        "team": "RMA",
+        "marketType": "corners",
+        "line": 8.5,
+        "oddsOver": "-115",
+        "oddsUnder": "-115",
+        "params": {
+          "PA": 0,
+          "hitProb": 0,
+          "meanRuns": 9.4,
+          "meanRBI": 0,
+          "meanHR": 0
+        }
+      }
+    ]
+  },
+  {
+    "id": "g_foot_1",
+    "sport": "futbol",
+    "matchup": "Atletico Madrid vs Athletic Club",
+    "short": "ATMvsATH",
+    "props": [
+      {
+        "id": "p_g_foot_1_goles",
+        "name": "Goles Totales Partido",
+        "team": "TOTAL",
+        "marketType": "goals",
+        "line": 2.5,
+        "oddsOver": "-120",
+        "oddsUnder": "-105",
+        "params": {
+          "PA": 0,
+          "hitProb": 0,
+          "meanRuns": 2.85,
+          "meanRBI": 0,
+          "meanHR": 0
+        }
+      },
+      {
+        "id": "p_g_foot_1_corners",
+        "name": "Tiros de Esquina",
+        "team": "ATM",
+        "marketType": "corners",
+        "line": 8.5,
+        "oddsOver": "-115",
+        "oddsUnder": "-115",
+        "params": {
+          "PA": 0,
+          "hitProb": 0,
+          "meanRuns": 9.4,
+          "meanRBI": 0,
+          "meanHR": 0
+        }
+      }
+    ]
+  },
+  {
+    "id": "g_foot_2",
+    "sport": "futbol",
+    "matchup": "Manchester City vs Arsenal",
+    "short": "MCIvsARS",
+    "props": [
+      {
+        "id": "p_g_foot_2_goles",
+        "name": "Goles Totales Partido",
+        "team": "TOTAL",
+        "marketType": "goals",
+        "line": 2.5,
+        "oddsOver": "-120",
+        "oddsUnder": "-105",
+        "params": {
+          "PA": 0,
+          "hitProb": 0,
+          "meanRuns": 2.85,
+          "meanRBI": 0,
+          "meanHR": 0
+        }
+      },
+      {
+        "id": "p_g_foot_2_corners",
+        "name": "Tiros de Esquina",
+        "team": "MCI",
+        "marketType": "corners",
+        "line": 8.5,
+        "oddsOver": "-115",
+        "oddsUnder": "-115",
+        "params": {
+          "PA": 0,
+          "hitProb": 0,
+          "meanRuns": 9.4,
+          "meanRBI": 0,
+          "meanHR": 0
+        }
+      }
+    ]
+  },
+  {
+    "id": "g_foot_3",
+    "sport": "futbol",
+    "matchup": "Juventus vs AC Milan",
+    "short": "JUVvsMIL",
+    "props": [
+      {
+        "id": "p_g_foot_3_goles",
+        "name": "Goles Totales Partido",
+        "team": "TOTAL",
+        "marketType": "goals",
+        "line": 2.5,
+        "oddsOver": "-120",
+        "oddsUnder": "-105",
+        "params": {
+          "PA": 0,
+          "hitProb": 0,
+          "meanRuns": 2.85,
+          "meanRBI": 0,
+          "meanHR": 0
+        }
+      },
+      {
+        "id": "p_g_foot_3_corners",
+        "name": "Tiros de Esquina",
+        "team": "JUV",
+        "marketType": "corners",
+        "line": 8.5,
+        "oddsOver": "-115",
+        "oddsUnder": "-115",
+        "params": {
+          "PA": 0,
+          "hitProb": 0,
+          "meanRuns": 9.4,
+          "meanRBI": 0,
+          "meanHR": 0
+        }
+      }
+    ]
+  },
+  {
+    "id": "g_foot_4",
+    "sport": "futbol",
+    "matchup": "Bayern Munich vs Dortmund",
+    "short": "FCBvsBVB",
+    "props": [
+      {
+        "id": "p_g_foot_4_goles",
+        "name": "Goles Totales Partido",
+        "team": "TOTAL",
+        "marketType": "goals",
+        "line": 2.5,
+        "oddsOver": "-120",
+        "oddsUnder": "-105",
+        "params": {
+          "PA": 0,
+          "hitProb": 0,
+          "meanRuns": 2.85,
+          "meanRBI": 0,
+          "meanHR": 0
+        }
+      },
+      {
+        "id": "p_g_foot_4_corners",
+        "name": "Tiros de Esquina",
+        "team": "FCB",
+        "marketType": "corners",
+        "line": 8.5,
+        "oddsOver": "-115",
+        "oddsUnder": "-115",
+        "params": {
+          "PA": 0,
+          "hitProb": 0,
+          "meanRuns": 9.4,
+          "meanRBI": 0,
+          "meanHR": 0
         }
       }
     ]
