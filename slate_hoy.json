@@ -1,87 +1,55 @@
 [
   {
-    "id": "g_wc_usa_bih",
+    "id": "g_futbol_usa_bosnia",
     "sport": "futbol",
     "matchup": "Estados Unidos vs Bosnia (Mundial 2026)",
     "short": "USAvsBIH",
     "props": [
       {
-        "id": "p_fb_ml",
+        "id": "fb_usa_ml",
         "name": "Línea de Dinero - Victoria USA",
         "team": "USA",
         "marketType": "goals",
         "line": 0,
         "oddsOver": "-165",
-        "oddsUnder": "+450",
+        "oddsUnder": "+425",
         "params": {
           "PA": 0,
-          "hitProb": 0,
-          "meanRuns": 2.1,
-          "meanRBI": 0,
+          "hitProb": 0.62,
+          "meanRuns": -0.0026415094339623524,
+          "meanRBI": 0.0,
           "meanHR": 0
         }
       },
       {
-        "id": "p_fb_corners",
-        "name": "Total Tiros de Esquina (Partido)",
+        "id": "fb_usa_goles",
+        "name": "Total de Goles (Over/Under)",
         "team": "TOTAL",
-        "marketType": "corners",
-        "line": 9.5,
+        "marketType": "combo",
+        "line": 2.5,
         "oddsOver": "+110",
         "oddsUnder": "-135",
         "params": {
           "PA": 0,
-          "hitProb": 0,
-          "meanRuns": 10.4,
-          "meanRBI": 0,
-          "meanHR": 0
+          "hitProb": 0.5423791164789342,
+          "meanRuns": 0.06618864028845806,
+          "meanRBI": 0.03159003286494589,
+          "meanHR": 2.85
         }
       },
       {
-        "id": "p_fb_sot",
-        "name": "Christian Pulisic - Tiros a Puerta (SOT)",
-        "team": "USA",
-        "marketType": "corners",
-        "line": 1.5,
-        "oddsOver": "-120",
-        "oddsUnder": "-110",
+        "id": "fb_usa_btts",
+        "name": "Ambos Equipos Marcan (Sí/No)",
+        "team": "TOTAL",
+        "marketType": "combo",
+        "line": 0.5,
+        "oddsOver": "-115",
+        "oddsUnder": "-105",
         "params": {
           "PA": 0,
-          "hitProb": 0,
-          "meanRuns": 1.95,
-          "meanRBI": 0,
-          "meanHR": 0
-        }
-      },
-      {
-        "id": "p_fb_shots",
-        "name": "Christian Pulisic - Tiros Totales",
-        "team": "USA",
-        "marketType": "goals",
-        "line": 3.5,
-        "oddsOver": "+105",
-        "oddsUnder": "-130",
-        "params": {
-          "PA": 0,
-          "hitProb": 0,
-          "meanRuns": 4.2,
-          "meanRBI": 0,
-          "meanHR": 0
-        }
-      },
-      {
-        "id": "p_fb_tackles",
-        "name": "Weston McKennie - Quites Totales (Tackles)",
-        "team": "USA",
-        "marketType": "corners",
-        "line": 2.5,
-        "oddsOver": "+115",
-        "oddsUnder": "-145",
-        "params": {
-          "PA": 0,
-          "hitProb": 0,
-          "meanRuns": 2.9,
-          "meanRBI": 0,
+          "hitProb": 0.54,
+          "meanRuns": 0.005116279069767415,
+          "meanRBI": 0.002750000000000013,
           "meanHR": 0
         }
       }
