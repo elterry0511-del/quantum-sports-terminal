@@ -1,50 +1,50 @@
 [
   {
-    "id": "g_wc_real_1",
+    "id": "g_wc_usa_bih",
     "sport": "futbol",
-    "matchup": "Argentina vs Dinamarca (Mundial 2026)",
-    "short": "ARGvsDIN",
+    "matchup": "Estados Unidos vs Bosnia (Mundial 2026)",
+    "short": "USAvsBIH",
     "props": [
       {
-        "id": "p_wc_1_ml",
-        "name": "Línea de Dinero - Victoria Argentina",
-        "team": "ARG",
+        "id": "p_fb_ml",
+        "name": "Línea de Dinero - Victoria USA",
+        "team": "USA",
         "marketType": "goals",
         "line": 0,
-        "oddsOver": "-145",
-        "oddsUnder": "+410",
+        "oddsOver": "-165",
+        "oddsUnder": "+450",
         "params": {
           "PA": 0,
           "hitProb": 0,
-          "meanRuns": 1.75,
+          "meanRuns": 2.1,
           "meanRBI": 0,
           "meanHR": 0
         }
       },
       {
-        "id": "p_wc_1_corners",
+        "id": "p_fb_corners",
         "name": "Total Tiros de Esquina (Partido)",
         "team": "TOTAL",
         "marketType": "corners",
         "line": 9.5,
         "oddsOver": "+110",
-        "oddsUnder": "-130",
+        "oddsUnder": "-135",
         "params": {
           "PA": 0,
           "hitProb": 0,
-          "meanRuns": 10.1,
+          "meanRuns": 10.4,
           "meanRBI": 0,
           "meanHR": 0
         }
       },
       {
-        "id": "p_wc_1_sot",
-        "name": "Lionel Messi - Tiros al Arco (SOT)",
-        "team": "ARG",
+        "id": "p_fb_sot",
+        "name": "Christian Pulisic - Tiros a Puerta (SOT)",
+        "team": "USA",
         "marketType": "corners",
         "line": 1.5,
-        "oddsOver": "-125",
-        "oddsUnder": "+100",
+        "oddsOver": "-120",
+        "oddsUnder": "-110",
         "params": {
           "PA": 0,
           "hitProb": 0,
@@ -54,25 +54,25 @@
         }
       },
       {
-        "id": "p_wc_1_shots",
-        "name": "Lionel Messi - Tiros Totales",
-        "team": "ARG",
+        "id": "p_fb_shots",
+        "name": "Christian Pulisic - Tiros Totales",
+        "team": "USA",
         "marketType": "goals",
         "line": 3.5,
-        "oddsOver": "-115",
-        "oddsUnder": "-115",
+        "oddsOver": "+105",
+        "oddsUnder": "-130",
         "params": {
           "PA": 0,
           "hitProb": 0,
-          "meanRuns": 4.1,
+          "meanRuns": 4.2,
           "meanRBI": 0,
           "meanHR": 0
         }
       },
       {
-        "id": "p_wc_1_tackles",
-        "name": "Rodrigo de Paul - Quites Totales (Tackles)",
-        "team": "ARG",
+        "id": "p_fb_tackles",
+        "name": "Weston McKennie - Quites Totales (Tackles)",
+        "team": "USA",
         "marketType": "corners",
         "line": 2.5,
         "oddsOver": "+115",
@@ -80,309 +80,9 @@
         "params": {
           "PA": 0,
           "hitProb": 0,
-          "meanRuns": 2.85,
+          "meanRuns": 2.9,
           "meanRBI": 0,
           "meanHR": 0
-        }
-      }
-    ]
-  },
-  {
-    "id": "g_wc_real_2",
-    "sport": "futbol",
-    "matchup": "Portugal vs Países Bajos (Mundial 2026)",
-    "short": "PORvsPAÍ",
-    "props": [
-      {
-        "id": "p_wc_2_ml",
-        "name": "Línea de Dinero - Victoria Portugal",
-        "team": "POR",
-        "marketType": "goals",
-        "line": 0,
-        "oddsOver": "+135",
-        "oddsUnder": "+210",
-        "params": {
-          "PA": 0,
-          "hitProb": 0,
-          "meanRuns": 1.3,
-          "meanRBI": 0,
-          "meanHR": 0
-        }
-      },
-      {
-        "id": "p_wc_2_corners",
-        "name": "Total Tiros de Esquina (Partido)",
-        "team": "TOTAL",
-        "marketType": "corners",
-        "line": 8.5,
-        "oddsOver": "-115",
-        "oddsUnder": "-115",
-        "params": {
-          "PA": 0,
-          "hitProb": 0,
-          "meanRuns": 9.3,
-          "meanRBI": 0,
-          "meanHR": 0
-        }
-      },
-      {
-        "id": "p_wc_2_sot",
-        "name": "Cristiano Ronaldo - Tiros al Arco (SOT)",
-        "team": "POR",
-        "marketType": "corners",
-        "line": 1.5,
-        "oddsOver": "-110",
-        "oddsUnder": "-120",
-        "params": {
-          "PA": 0,
-          "hitProb": 0,
-          "meanRuns": 1.68,
-          "meanRBI": 0,
-          "meanHR": 0
-        }
-      },
-      {
-        "id": "p_wc_2_shots",
-        "name": "Cristiano Ronaldo - Tiros Totales",
-        "team": "POR",
-        "marketType": "goals",
-        "line": 2.5,
-        "oddsOver": "-140",
-        "oddsUnder": "+110",
-        "params": {
-          "PA": 0,
-          "hitProb": 0,
-          "meanRuns": 3.2,
-          "meanRBI": 0,
-          "meanHR": 0
-        }
-      },
-      {
-        "id": "p_wc_2_tackles",
-        "name": "João Palhinha - Quites Totales (Tackles)",
-        "team": "POR",
-        "marketType": "corners",
-        "line": 3.5,
-        "oddsOver": "+120",
-        "oddsUnder": "-155",
-        "params": {
-          "PA": 0,
-          "hitProb": 0,
-          "meanRuns": 3.9,
-          "meanRBI": 0,
-          "meanHR": 0
-        }
-      }
-    ]
-  },
-  {
-    "id": "g_mlb_real_1",
-    "sport": "mlb",
-    "matchup": "New York Yankees @ Boston Red Sox",
-    "short": "NEW@BOS",
-    "props": [
-      {
-        "id": "p_mlb_1_ks",
-        "name": "Gerrit Cole (Ponches - Ks)",
-        "team": "NEW",
-        "marketType": "pitcherKs",
-        "line": 6.5,
-        "oddsOver": "+115",
-        "oddsUnder": "-145",
-        "params": {
-          "k9": 9.6,
-          "ip": 6.0,
-          "PA": 0,
-          "hitProb": 0,
-          "meanRuns": 0,
-          "meanRBI": 0,
-          "meanHR": 0
-        }
-      },
-      {
-        "id": "p_mlb_1_hits",
-        "name": "Aaron Judge (Hits Totales)",
-        "team": "NEW",
-        "marketType": "hits",
-        "line": 0.5,
-        "oddsOver": "-170",
-        "oddsUnder": "+135",
-        "params": {
-          "PA": 4.2,
-          "hitProb": 0.29,
-          "meanRuns": 0.5,
-          "meanRBI": 0.4,
-          "meanHR": 0.12
-        }
-      },
-      {
-        "id": "p_mlb_1_runs",
-        "name": "Aaron Judge (Carreras Anotadas - Runs)",
-        "team": "NEW",
-        "marketType": "hits",
-        "line": 0.5,
-        "oddsOver": "-115",
-        "oddsUnder": "-115",
-        "params": {
-          "PA": 4.2,
-          "hitProb": 0.29,
-          "meanRuns": 0.68,
-          "meanRBI": 0.2,
-          "meanHR": 0.12
-        }
-      },
-      {
-        "id": "p_mlb_1_rbis",
-        "name": "Rafael Devers (Carreras Impulsadas - RBIs)",
-        "team": "BOS",
-        "marketType": "hits",
-        "line": 0.5,
-        "oddsOver": "+140",
-        "oddsUnder": "-180",
-        "params": {
-          "PA": 4.3,
-          "hitProb": 0.28,
-          "meanRuns": 0.4,
-          "meanRBI": 0.62,
-          "meanHR": 0.15
-        }
-      },
-      {
-        "id": "p_mlb_1_combo",
-        "name": "Jarren Duran (Hits + Runs + RBIs)",
-        "team": "BOS",
-        "marketType": "combo",
-        "line": 1.5,
-        "oddsOver": "-140",
-        "oddsUnder": "+110",
-        "params": {
-          "PA": 4.4,
-          "hitProb": 0.27,
-          "meanRuns": 0.85,
-          "meanRBI": 0.45,
-          "meanHR": 0.05
-        }
-      },
-      {
-        "id": "p_mlb_1_hr",
-        "name": "Aaron Judge (Jonrones - HR)",
-        "team": "NEW",
-        "marketType": "hits",
-        "line": 0.5,
-        "oddsOver": "+250",
-        "oddsUnder": "-340",
-        "params": {
-          "PA": 4.2,
-          "hitProb": 0.29,
-          "meanRuns": 0.5,
-          "meanRBI": 0.4,
-          "meanHR": 0.28
-        }
-      }
-    ]
-  },
-  {
-    "id": "g_mlb_real_2",
-    "sport": "mlb",
-    "matchup": "San Francisco Giants @ Los Angeles Dodgers",
-    "short": "SAN@LOS",
-    "props": [
-      {
-        "id": "p_mlb_2_ks",
-        "name": "Tyler Glasnow (Ponches - Ks)",
-        "team": "LOS",
-        "marketType": "pitcherKs",
-        "line": 7.5,
-        "oddsOver": "-110",
-        "oddsUnder": "-120",
-        "params": {
-          "k9": 11.4,
-          "ip": 6.1,
-          "PA": 0,
-          "hitProb": 0,
-          "meanRuns": 0,
-          "meanRBI": 0,
-          "meanHR": 0
-        }
-      },
-      {
-        "id": "p_mlb_2_hits",
-        "name": "Shohei Ohtani (Hits Totales)",
-        "team": "LOS",
-        "marketType": "hits",
-        "line": 1.5,
-        "oddsOver": "+150",
-        "oddsUnder": "-190",
-        "params": {
-          "PA": 4.5,
-          "hitProb": 0.315,
-          "meanRuns": 0.7,
-          "meanRBI": 0.5,
-          "meanHR": 0.22
-        }
-      },
-      {
-        "id": "p_mlb_2_runs",
-        "name": "Shohei Ohtani (Carreras Anotadas - Runs)",
-        "team": "LOS",
-        "marketType": "hits",
-        "line": 0.5,
-        "oddsOver": "-125",
-        "oddsUnder": "-105",
-        "params": {
-          "PA": 4.5,
-          "hitProb": 0.315,
-          "meanRuns": 0.78,
-          "meanRBI": 0.5,
-          "meanHR": 0.22
-        }
-      },
-      {
-        "id": "p_mlb_2_rbis",
-        "name": "Matt Chapman (Carreras Impulsadas - RBIs)",
-        "team": "SAN",
-        "marketType": "hits",
-        "line": 0.5,
-        "oddsOver": "+155",
-        "oddsUnder": "-200",
-        "params": {
-          "PA": 4.1,
-          "hitProb": 0.25,
-          "meanRuns": 0.4,
-          "meanRBI": 0.52,
-          "meanHR": 0.08
-        }
-      },
-      {
-        "id": "p_mlb_2_combo",
-        "name": "Shohei Ohtani (Hits + Runs + RBIs)",
-        "team": "LOS",
-        "marketType": "combo",
-        "line": 1.5,
-        "oddsOver": "-120",
-        "oddsUnder": "-110",
-        "params": {
-          "PA": 4.5,
-          "hitProb": 0.315,
-          "meanRuns": 0.7,
-          "meanRBI": 0.5,
-          "meanHR": 0.22
-        }
-      },
-      {
-        "id": "p_mlb_2_hr",
-        "name": "Shohei Ohtani (Jonrones - HR)",
-        "team": "LOS",
-        "marketType": "hits",
-        "line": 0.5,
-        "oddsOver": "+290",
-        "oddsUnder": "-400",
-        "params": {
-          "PA": 4.5,
-          "hitProb": 0.315,
-          "meanRuns": 0.7,
-          "meanRBI": 0.5,
-          "meanHR": 0.24
         }
       }
     ]
