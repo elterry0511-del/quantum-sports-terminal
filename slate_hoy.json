@@ -1,327 +1,21 @@
 [
   {
-    "id": "g_mlb_824818",
+    "id": "g_live_mlb_0",
     "sport": "mlb",
-    "matchup": "Chicago White Sox vs Baltimore Orioles",
-    "short": "CHI@BAL",
-    "props": [
-      {
-        "id": "p_g_mlb_824818_hits",
-        "name": "R. Acuña",
-        "team": "CHI",
-        "marketType": "hits",
-        "line": 0.5,
-        "oddsOver": "-110",
-        "oddsUnder": "-110",
-        "params": {
-          "PA": 4.4,
-          "hitProb": 0.254,
-          "meanRuns": 0.45,
-          "meanRBI": 0.4,
-          "meanHR": 0.12
-        }
-      },
-      {
-        "id": "p_g_mlb_824818_pitcher",
-        "name": "M. King",
-        "team": "BAL",
-        "marketType": "pitcherKs",
-        "line": 5.5,
-        "oddsOver": "-145",
-        "oddsUnder": "+115",
-        "params": {
-          "k9": 10.3,
-          "ip": 6.0,
-          "PA": 0,
-          "hitProb": 0,
-          "meanRuns": 0,
-          "meanRBI": 0,
-          "meanHR": 0
-        }
-      },
-      {
-        "id": "p_g_mlb_824818_combo",
-        "name": "Lineup Slugger Pro",
-        "team": "CHI",
-        "marketType": "combo",
-        "line": 1.5,
-        "oddsOver": "-115",
-        "oddsUnder": "-115",
-        "params": {
-          "PA": 4.2,
-          "hitProb": 0.244,
-          "meanRuns": 0.55,
-          "meanRBI": 0.6,
-          "meanHR": 0.15
-        }
-      }
-    ]
-  },
-  {
-    "id": "g_mlb_824419",
-    "sport": "mlb",
-    "matchup": "Texas Rangers vs Cleveland Guardians",
-    "short": "TEX@CLE",
-    "props": [
-      {
-        "id": "p_g_mlb_824419_hits",
-        "name": "V. Guerrero",
-        "team": "TEX",
-        "marketType": "hits",
-        "line": 0.5,
-        "oddsOver": "-145",
-        "oddsUnder": "+115",
-        "params": {
-          "PA": 4.4,
-          "hitProb": 0.237,
-          "meanRuns": 0.45,
-          "meanRBI": 0.4,
-          "meanHR": 0.12
-        }
-      },
-      {
-        "id": "p_g_mlb_824419_pitcher",
-        "name": "C. Burnes",
-        "team": "CLE",
-        "marketType": "pitcherKs",
-        "line": 5.5,
-        "oddsOver": "-130",
-        "oddsUnder": "+100",
-        "params": {
-          "k9": 11.0,
-          "ip": 6.1,
-          "PA": 0,
-          "hitProb": 0,
-          "meanRuns": 0,
-          "meanRBI": 0,
-          "meanHR": 0
-        }
-      },
-      {
-        "id": "p_g_mlb_824419_combo",
-        "name": "Lineup Slugger Pro",
-        "team": "TEX",
-        "marketType": "combo",
-        "line": 1.5,
-        "oddsOver": "-115",
-        "oddsUnder": "-115",
-        "params": {
-          "PA": 4.2,
-          "hitProb": 0.269,
-          "meanRuns": 0.55,
-          "meanRBI": 0.6,
-          "meanHR": 0.15
-        }
-      }
-    ]
-  },
-  {
-    "id": "g_mlb_824740",
-    "sport": "mlb",
-    "matchup": "Washington Nationals vs Boston Red Sox",
-    "short": "WAS@BOS",
-    "props": [
-      {
-        "id": "p_g_mlb_824740_hits",
-        "name": "M. Betts",
-        "team": "WAS",
-        "marketType": "hits",
-        "line": 0.5,
-        "oddsOver": "-145",
-        "oddsUnder": "+115",
-        "params": {
-          "PA": 4.0,
-          "hitProb": 0.241,
-          "meanRuns": 0.45,
-          "meanRBI": 0.4,
-          "meanHR": 0.12
-        }
-      },
-      {
-        "id": "p_g_mlb_824740_pitcher",
-        "name": "G. Cole",
-        "team": "BOS",
-        "marketType": "pitcherKs",
-        "line": 5.5,
-        "oddsOver": "-115",
-        "oddsUnder": "-115",
-        "params": {
-          "k9": 9.6,
-          "ip": 5.3,
-          "PA": 0,
-          "hitProb": 0,
-          "meanRuns": 0,
-          "meanRBI": 0,
-          "meanHR": 0
-        }
-      },
-      {
-        "id": "p_g_mlb_824740_combo",
-        "name": "Lineup Slugger Pro",
-        "team": "WAS",
-        "marketType": "combo",
-        "line": 1.5,
-        "oddsOver": "-130",
-        "oddsUnder": "+100",
-        "params": {
-          "PA": 4.2,
-          "hitProb": 0.264,
-          "meanRuns": 0.55,
-          "meanRBI": 0.6,
-          "meanHR": 0.15
-        }
-      }
-    ]
-  },
-  {
-    "id": "g_mlb_823530",
-    "sport": "mlb",
-    "matchup": "Detroit Tigers vs New York Yankees",
-    "short": "DET@NEW",
-    "props": [
-      {
-        "id": "p_g_mlb_823530_hits",
-        "name": "V. Guerrero",
-        "team": "DET",
-        "marketType": "hits",
-        "line": 0.5,
-        "oddsOver": "-110",
-        "oddsUnder": "-110",
-        "params": {
-          "PA": 4.0,
-          "hitProb": 0.236,
-          "meanRuns": 0.45,
-          "meanRBI": 0.4,
-          "meanHR": 0.12
-        }
-      },
-      {
-        "id": "p_g_mlb_823530_pitcher",
-        "name": "Z. Wheeler",
-        "team": "NEW",
-        "marketType": "pitcherKs",
-        "line": 5.5,
-        "oddsOver": "-130",
-        "oddsUnder": "+100",
-        "params": {
-          "k9": 9.6,
-          "ip": 6.0,
-          "PA": 0,
-          "hitProb": 0,
-          "meanRuns": 0,
-          "meanRBI": 0,
-          "meanHR": 0
-        }
-      },
-      {
-        "id": "p_g_mlb_823530_combo",
-        "name": "Lineup Slugger Pro",
-        "team": "DET",
-        "marketType": "combo",
-        "line": 1.5,
-        "oddsOver": "-115",
-        "oddsUnder": "-115",
-        "params": {
-          "PA": 4.2,
-          "hitProb": 0.273,
-          "meanRuns": 0.55,
-          "meanRBI": 0.6,
-          "meanHR": 0.15
-        }
-      }
-    ]
-  },
-  {
-    "id": "g_mlb_824660",
-    "sport": "mlb",
-    "matchup": "San Diego Padres vs Chicago Cubs",
-    "short": "SAN@CHI",
-    "props": [
-      {
-        "id": "p_g_mlb_824660_hits",
-        "name": "R. Acuña",
-        "team": "SAN",
-        "marketType": "hits",
-        "line": 0.5,
-        "oddsOver": "-110",
-        "oddsUnder": "-110",
-        "params": {
-          "PA": 4.0,
-          "hitProb": 0.241,
-          "meanRuns": 0.45,
-          "meanRBI": 0.4,
-          "meanHR": 0.12
-        }
-      },
-      {
-        "id": "p_g_mlb_824660_pitcher",
-        "name": "G. Cole",
-        "team": "CHI",
-        "marketType": "pitcherKs",
-        "line": 5.5,
-        "oddsOver": "+105",
-        "oddsUnder": "-135",
-        "params": {
-          "k9": 9.5,
-          "ip": 6.2,
-          "PA": 0,
-          "hitProb": 0,
-          "meanRuns": 0,
-          "meanRBI": 0,
-          "meanHR": 0
-        }
-      },
-      {
-        "id": "p_g_mlb_824660_combo",
-        "name": "Lineup Slugger Pro",
-        "team": "SAN",
-        "marketType": "combo",
-        "line": 1.5,
-        "oddsOver": "-110",
-        "oddsUnder": "-110",
-        "params": {
-          "PA": 4.2,
-          "hitProb": 0.25,
-          "meanRuns": 0.55,
-          "meanRBI": 0.6,
-          "meanHR": 0.15
-        }
-      }
-    ]
-  },
-  {
-    "id": "g_mlb_822791",
-    "sport": "mlb",
-    "matchup": "New York Mets vs Toronto Blue Jays",
+    "matchup": "New York Mets @ Toronto Blue Jays",
     "short": "NEW@TOR",
     "props": [
       {
-        "id": "p_g_mlb_822791_hits",
-        "name": "V. Guerrero",
-        "team": "NEW",
-        "marketType": "hits",
-        "line": 0.5,
-        "oddsOver": "-145",
-        "oddsUnder": "+115",
-        "params": {
-          "PA": 4.1,
-          "hitProb": 0.244,
-          "meanRuns": 0.45,
-          "meanRBI": 0.4,
-          "meanHR": 0.12
-        }
-      },
-      {
-        "id": "p_g_mlb_822791_pitcher",
-        "name": "Z. Wheeler",
+        "id": "p_g_live_mlb_0_ks",
+        "name": "Starting Pitcher Ace",
         "team": "TOR",
         "marketType": "pitcherKs",
         "line": 5.5,
-        "oddsOver": "-115",
-        "oddsUnder": "-115",
+        "oddsOver": "-20000",
+        "oddsUnder": "+2200",
         "params": {
-          "k9": 11.2,
-          "ip": 5.1,
+          "k9": 9.4,
+          "ip": 6.1,
           "PA": 0,
           "hitProb": 0,
           "meanRuns": 0,
@@ -330,56 +24,56 @@
         }
       },
       {
-        "id": "p_g_mlb_822791_combo",
-        "name": "Lineup Slugger Pro",
+        "id": "p_g_live_mlb_0_hr",
+        "name": "Cleanup Slugger Pro",
         "team": "NEW",
-        "marketType": "combo",
-        "line": 1.5,
-        "oddsOver": "-130",
-        "oddsUnder": "+100",
+        "marketType": "hits",
+        "line": 0.5,
+        "oddsOver": "+225",
+        "oddsUnder": "-300",
         "params": {
           "PA": 4.2,
-          "hitProb": 0.262,
-          "meanRuns": 0.55,
-          "meanRBI": 0.6,
-          "meanHR": 0.15
+          "hitProb": 0.265,
+          "meanRuns": 0.45,
+          "meanRBI": 0.35,
+          "meanHR": 0.12
+        }
+      },
+      {
+        "id": "p_g_live_mlb_0_combo",
+        "name": "Lineup Global Core",
+        "team": "TOTAL",
+        "marketType": "combo",
+        "line": 7.5,
+        "oddsOver": "-102",
+        "oddsUnder": "-130",
+        "params": {
+          "PA": 4.5,
+          "hitProb": 0.25,
+          "meanRuns": 3.75,
+          "meanRBI": 0.5,
+          "meanHR": 0.08
         }
       }
     ]
   },
   {
-    "id": "g_mlb_823446",
+    "id": "g_live_mlb_1",
     "sport": "mlb",
-    "matchup": "Pittsburgh Pirates vs Philadelphia Phillies",
+    "matchup": "Pittsburgh Pirates @ Philadelphia Phillies",
     "short": "PIT@PHI",
     "props": [
       {
-        "id": "p_g_mlb_823446_hits",
-        "name": "M. Betts",
-        "team": "PIT",
-        "marketType": "hits",
-        "line": 0.5,
-        "oddsOver": "-110",
-        "oddsUnder": "-110",
-        "params": {
-          "PA": 4.1,
-          "hitProb": 0.28,
-          "meanRuns": 0.45,
-          "meanRBI": 0.4,
-          "meanHR": 0.12
-        }
-      },
-      {
-        "id": "p_g_mlb_823446_pitcher",
-        "name": "L. Castillo",
+        "id": "p_g_live_mlb_1_ks",
+        "name": "Starting Pitcher Ace",
         "team": "PHI",
         "marketType": "pitcherKs",
         "line": 5.5,
-        "oddsOver": "-115",
-        "oddsUnder": "-115",
+        "oddsOver": "-142",
+        "oddsUnder": "+120",
         "params": {
-          "k9": 11.4,
-          "ip": 5.1,
+          "k9": 9.4,
+          "ip": 6.1,
           "PA": 0,
           "hitProb": 0,
           "meanRuns": 0,
@@ -388,56 +82,56 @@
         }
       },
       {
-        "id": "p_g_mlb_823446_combo",
-        "name": "Lineup Slugger Pro",
+        "id": "p_g_live_mlb_1_hr",
+        "name": "Cleanup Slugger Pro",
         "team": "PIT",
-        "marketType": "combo",
-        "line": 1.5,
-        "oddsOver": "+105",
-        "oddsUnder": "-135",
+        "marketType": "hits",
+        "line": 0.5,
+        "oddsOver": "+225",
+        "oddsUnder": "-300",
         "params": {
           "PA": 4.2,
-          "hitProb": 0.256,
-          "meanRuns": 0.55,
-          "meanRBI": 0.6,
-          "meanHR": 0.15
+          "hitProb": 0.265,
+          "meanRuns": 0.45,
+          "meanRBI": 0.35,
+          "meanHR": 0.12
+        }
+      },
+      {
+        "id": "p_g_live_mlb_1_combo",
+        "name": "Lineup Global Core",
+        "team": "TOTAL",
+        "marketType": "combo",
+        "line": 8.0,
+        "oddsOver": "-115",
+        "oddsUnder": "-105",
+        "params": {
+          "PA": 4.5,
+          "hitProb": 0.25,
+          "meanRuns": 4.0,
+          "meanRBI": 0.5,
+          "meanHR": 0.08
         }
       }
     ]
   },
   {
-    "id": "g_mlb_824905",
+    "id": "g_live_mlb_2",
     "sport": "mlb",
-    "matchup": "St. Louis Cardinals vs Atlanta Braves",
+    "matchup": "St. Louis Cardinals @ Atlanta Braves",
     "short": "ST.@ATL",
     "props": [
       {
-        "id": "p_g_mlb_824905_hits",
-        "name": "J. Soto",
-        "team": "ST.",
-        "marketType": "hits",
-        "line": 0.5,
-        "oddsOver": "-130",
-        "oddsUnder": "+100",
-        "params": {
-          "PA": 4.3,
-          "hitProb": 0.28,
-          "meanRuns": 0.45,
-          "meanRBI": 0.4,
-          "meanHR": 0.12
-        }
-      },
-      {
-        "id": "p_g_mlb_824905_pitcher",
-        "name": "M. King",
+        "id": "p_g_live_mlb_2_ks",
+        "name": "Starting Pitcher Ace",
         "team": "ATL",
         "marketType": "pitcherKs",
         "line": 5.5,
-        "oddsOver": "-110",
-        "oddsUnder": "-110",
+        "oddsOver": "-134",
+        "oddsUnder": "+116",
         "params": {
-          "k9": 8.9,
-          "ip": 6.2,
+          "k9": 9.4,
+          "ip": 6.1,
           "PA": 0,
           "hitProb": 0,
           "meanRuns": 0,
@@ -446,55 +140,55 @@
         }
       },
       {
-        "id": "p_g_mlb_824905_combo",
-        "name": "Lineup Slugger Pro",
+        "id": "p_g_live_mlb_2_hr",
+        "name": "Cleanup Slugger Pro",
         "team": "ST.",
-        "marketType": "combo",
-        "line": 1.5,
-        "oddsOver": "-145",
-        "oddsUnder": "+115",
+        "marketType": "hits",
+        "line": 0.5,
+        "oddsOver": "+225",
+        "oddsUnder": "-300",
         "params": {
           "PA": 4.2,
-          "hitProb": 0.273,
-          "meanRuns": 0.55,
-          "meanRBI": 0.6,
-          "meanHR": 0.15
+          "hitProb": 0.265,
+          "meanRuns": 0.45,
+          "meanRBI": 0.35,
+          "meanHR": 0.12
+        }
+      },
+      {
+        "id": "p_g_live_mlb_2_combo",
+        "name": "Lineup Global Core",
+        "team": "TOTAL",
+        "marketType": "combo",
+        "line": 9.0,
+        "oddsOver": "-115",
+        "oddsUnder": "-105",
+        "params": {
+          "PA": 4.5,
+          "hitProb": 0.25,
+          "meanRuns": 4.5,
+          "meanRBI": 0.5,
+          "meanHR": 0.08
         }
       }
     ]
   },
   {
-    "id": "g_mlb_824094",
+    "id": "g_live_mlb_3",
     "sport": "mlb",
-    "matchup": "Tampa Bay Rays vs Kansas City Royals",
+    "matchup": "Tampa Bay Rays @ Kansas City Royals",
     "short": "TAM@KAN",
     "props": [
       {
-        "id": "p_g_mlb_824094_hits",
-        "name": "M. Betts",
-        "team": "TAM",
-        "marketType": "hits",
-        "line": 0.5,
-        "oddsOver": "-115",
-        "oddsUnder": "-115",
-        "params": {
-          "PA": 3.9,
-          "hitProb": 0.237,
-          "meanRuns": 0.45,
-          "meanRBI": 0.4,
-          "meanHR": 0.12
-        }
-      },
-      {
-        "id": "p_g_mlb_824094_pitcher",
-        "name": "L. Castillo",
+        "id": "p_g_live_mlb_3_ks",
+        "name": "Starting Pitcher Ace",
         "team": "KAN",
         "marketType": "pitcherKs",
         "line": 5.5,
-        "oddsOver": "-110",
-        "oddsUnder": "-110",
+        "oddsOver": "+124",
+        "oddsUnder": "-146",
         "params": {
-          "k9": 10.4,
+          "k9": 9.4,
           "ip": 6.1,
           "PA": 0,
           "hitProb": 0,
@@ -504,171 +198,55 @@
         }
       },
       {
-        "id": "p_g_mlb_824094_combo",
-        "name": "Lineup Slugger Pro",
+        "id": "p_g_live_mlb_3_hr",
+        "name": "Cleanup Slugger Pro",
         "team": "TAM",
-        "marketType": "combo",
-        "line": 1.5,
-        "oddsOver": "-145",
-        "oddsUnder": "+115",
-        "params": {
-          "PA": 4.2,
-          "hitProb": 0.269,
-          "meanRuns": 0.55,
-          "meanRBI": 0.6,
-          "meanHR": 0.15
-        }
-      }
-    ]
-  },
-  {
-    "id": "g_mlb_824174",
-    "sport": "mlb",
-    "matchup": "Minnesota Twins vs Houston Astros",
-    "short": "MIN@HOU",
-    "props": [
-      {
-        "id": "p_g_mlb_824174_hits",
-        "name": "J. Soto",
-        "team": "MIN",
         "marketType": "hits",
         "line": 0.5,
-        "oddsOver": "+105",
-        "oddsUnder": "-135",
+        "oddsOver": "+225",
+        "oddsUnder": "-300",
         "params": {
-          "PA": 4.3,
-          "hitProb": 0.26,
+          "PA": 4.2,
+          "hitProb": 0.265,
           "meanRuns": 0.45,
-          "meanRBI": 0.4,
+          "meanRBI": 0.35,
           "meanHR": 0.12
         }
       },
       {
-        "id": "p_g_mlb_824174_pitcher",
-        "name": "M. King",
-        "team": "HOU",
-        "marketType": "pitcherKs",
-        "line": 5.5,
-        "oddsOver": "-130",
-        "oddsUnder": "+100",
-        "params": {
-          "k9": 8.6,
-          "ip": 5.9,
-          "PA": 0,
-          "hitProb": 0,
-          "meanRuns": 0,
-          "meanRBI": 0,
-          "meanHR": 0
-        }
-      },
-      {
-        "id": "p_g_mlb_824174_combo",
-        "name": "Lineup Slugger Pro",
-        "team": "MIN",
+        "id": "p_g_live_mlb_3_combo",
+        "name": "Lineup Global Core",
+        "team": "TOTAL",
         "marketType": "combo",
-        "line": 1.5,
-        "oddsOver": "-115",
-        "oddsUnder": "-115",
+        "line": 10.5,
+        "oddsOver": "-110",
+        "oddsUnder": "-110",
         "params": {
-          "PA": 4.2,
-          "hitProb": 0.27,
-          "meanRuns": 0.55,
-          "meanRBI": 0.6,
-          "meanHR": 0.15
+          "PA": 4.5,
+          "hitProb": 0.25,
+          "meanRuns": 5.25,
+          "meanRBI": 0.5,
+          "meanHR": 0.08
         }
       }
     ]
   },
   {
-    "id": "g_mlb_823767",
+    "id": "g_live_mlb_4",
     "sport": "mlb",
-    "matchup": "Cincinnati Reds vs Milwaukee Brewers",
+    "matchup": "Cincinnati Reds @ Milwaukee Brewers",
     "short": "CIN@MIL",
     "props": [
       {
-        "id": "p_g_mlb_823767_hits",
-        "name": "V. Guerrero",
-        "team": "CIN",
-        "marketType": "hits",
-        "line": 0.5,
-        "oddsOver": "-145",
-        "oddsUnder": "+115",
-        "params": {
-          "PA": 4.4,
-          "hitProb": 0.247,
-          "meanRuns": 0.45,
-          "meanRBI": 0.4,
-          "meanHR": 0.12
-        }
-      },
-      {
-        "id": "p_g_mlb_823767_pitcher",
-        "name": "F. Valdez",
+        "id": "p_g_live_mlb_4_ks",
+        "name": "Starting Pitcher Ace",
         "team": "MIL",
         "marketType": "pitcherKs",
         "line": 5.5,
-        "oddsOver": "-110",
-        "oddsUnder": "-110",
+        "oddsOver": "-162",
+        "oddsUnder": "+136",
         "params": {
-          "k9": 9.3,
-          "ip": 6.0,
-          "PA": 0,
-          "hitProb": 0,
-          "meanRuns": 0,
-          "meanRBI": 0,
-          "meanHR": 0
-        }
-      },
-      {
-        "id": "p_g_mlb_823767_combo",
-        "name": "Lineup Slugger Pro",
-        "team": "CIN",
-        "marketType": "combo",
-        "line": 1.5,
-        "oddsOver": "+105",
-        "oddsUnder": "-135",
-        "params": {
-          "PA": 4.2,
-          "hitProb": 0.247,
-          "meanRuns": 0.55,
-          "meanRBI": 0.6,
-          "meanHR": 0.15
-        }
-      }
-    ]
-  },
-  {
-    "id": "g_mlb_824337",
-    "sport": "mlb",
-    "matchup": "Miami Marlins vs Colorado Rockies",
-    "short": "MIA@COL",
-    "props": [
-      {
-        "id": "p_g_mlb_824337_hits",
-        "name": "S. Ohtani",
-        "team": "MIA",
-        "marketType": "hits",
-        "line": 0.5,
-        "oddsOver": "-130",
-        "oddsUnder": "+100",
-        "params": {
-          "PA": 3.9,
-          "hitProb": 0.25,
-          "meanRuns": 0.45,
-          "meanRBI": 0.4,
-          "meanHR": 0.12
-        }
-      },
-      {
-        "id": "p_g_mlb_824337_pitcher",
-        "name": "F. Valdez",
-        "team": "COL",
-        "marketType": "pitcherKs",
-        "line": 5.5,
-        "oddsOver": "-145",
-        "oddsUnder": "+115",
-        "params": {
-          "k9": 10.2,
+          "k9": 9.4,
           "ip": 6.1,
           "PA": 0,
           "hitProb": 0,
@@ -678,56 +256,56 @@
         }
       },
       {
-        "id": "p_g_mlb_824337_combo",
-        "name": "Lineup Slugger Pro",
-        "team": "MIA",
-        "marketType": "combo",
-        "line": 1.5,
-        "oddsOver": "-130",
-        "oddsUnder": "+100",
+        "id": "p_g_live_mlb_4_hr",
+        "name": "Cleanup Slugger Pro",
+        "team": "CIN",
+        "marketType": "hits",
+        "line": 0.5,
+        "oddsOver": "+225",
+        "oddsUnder": "-300",
         "params": {
           "PA": 4.2,
-          "hitProb": 0.269,
-          "meanRuns": 0.55,
-          "meanRBI": 0.6,
-          "meanHR": 0.15
+          "hitProb": 0.265,
+          "meanRuns": 0.45,
+          "meanRBI": 0.35,
+          "meanHR": 0.12
+        }
+      },
+      {
+        "id": "p_g_live_mlb_4_combo",
+        "name": "Lineup Global Core",
+        "team": "TOTAL",
+        "marketType": "combo",
+        "line": 9.0,
+        "oddsOver": "-110",
+        "oddsUnder": "-110",
+        "params": {
+          "PA": 4.5,
+          "hitProb": 0.25,
+          "meanRuns": 4.5,
+          "meanRBI": 0.5,
+          "meanHR": 0.08
         }
       }
     ]
   },
   {
-    "id": "g_mlb_824985",
+    "id": "g_live_mlb_5",
     "sport": "mlb",
-    "matchup": "Los Angeles Dodgers vs Athletics",
-    "short": "LOS@ATH",
+    "matchup": "Minnesota Twins @ Houston Astros",
+    "short": "MIN@HOU",
     "props": [
       {
-        "id": "p_g_mlb_824985_hits",
-        "name": "F. Lindor",
-        "team": "LOS",
-        "marketType": "hits",
-        "line": 0.5,
-        "oddsOver": "+105",
-        "oddsUnder": "-135",
-        "params": {
-          "PA": 4.3,
-          "hitProb": 0.268,
-          "meanRuns": 0.45,
-          "meanRBI": 0.4,
-          "meanHR": 0.12
-        }
-      },
-      {
-        "id": "p_g_mlb_824985_pitcher",
-        "name": "Z. Wheeler",
-        "team": "ATH",
+        "id": "p_g_live_mlb_5_ks",
+        "name": "Starting Pitcher Ace",
+        "team": "HOU",
         "marketType": "pitcherKs",
         "line": 5.5,
-        "oddsOver": "-110",
-        "oddsUnder": "-110",
+        "oddsOver": "-138",
+        "oddsUnder": "+118",
         "params": {
-          "k9": 8.7,
-          "ip": 5.5,
+          "k9": 9.4,
+          "ip": 6.1,
           "PA": 0,
           "hitProb": 0,
           "meanRuns": 0,
@@ -736,56 +314,114 @@
         }
       },
       {
-        "id": "p_g_mlb_824985_combo",
-        "name": "Lineup Slugger Pro",
-        "team": "LOS",
-        "marketType": "combo",
-        "line": 1.5,
-        "oddsOver": "-110",
-        "oddsUnder": "-110",
+        "id": "p_g_live_mlb_5_hr",
+        "name": "Cleanup Slugger Pro",
+        "team": "MIN",
+        "marketType": "hits",
+        "line": 0.5,
+        "oddsOver": "+225",
+        "oddsUnder": "-300",
         "params": {
           "PA": 4.2,
-          "hitProb": 0.256,
-          "meanRuns": 0.55,
-          "meanRBI": 0.6,
-          "meanHR": 0.15
+          "hitProb": 0.265,
+          "meanRuns": 0.45,
+          "meanRBI": 0.35,
+          "meanHR": 0.12
+        }
+      },
+      {
+        "id": "p_g_live_mlb_5_combo",
+        "name": "Lineup Global Core",
+        "team": "TOTAL",
+        "marketType": "combo",
+        "line": 8.5,
+        "oddsOver": "-108",
+        "oddsUnder": "-112",
+        "params": {
+          "PA": 4.5,
+          "hitProb": 0.25,
+          "meanRuns": 4.25,
+          "meanRBI": 0.5,
+          "meanHR": 0.08
         }
       }
     ]
   },
   {
-    "id": "g_mlb_825064",
+    "id": "g_live_mlb_6",
     "sport": "mlb",
-    "matchup": "San Francisco Giants vs Arizona Diamondbacks",
+    "matchup": "Miami Marlins @ Colorado Rockies",
+    "short": "MIA@COL",
+    "props": [
+      {
+        "id": "p_g_live_mlb_6_ks",
+        "name": "Starting Pitcher Ace",
+        "team": "COL",
+        "marketType": "pitcherKs",
+        "line": 5.5,
+        "oddsOver": "+130",
+        "oddsUnder": "-154",
+        "params": {
+          "k9": 9.4,
+          "ip": 6.1,
+          "PA": 0,
+          "hitProb": 0,
+          "meanRuns": 0,
+          "meanRBI": 0,
+          "meanHR": 0
+        }
+      },
+      {
+        "id": "p_g_live_mlb_6_hr",
+        "name": "Cleanup Slugger Pro",
+        "team": "MIA",
+        "marketType": "hits",
+        "line": 0.5,
+        "oddsOver": "+225",
+        "oddsUnder": "-300",
+        "params": {
+          "PA": 4.2,
+          "hitProb": 0.265,
+          "meanRuns": 0.45,
+          "meanRBI": 0.35,
+          "meanHR": 0.12
+        }
+      },
+      {
+        "id": "p_g_live_mlb_6_combo",
+        "name": "Lineup Global Core",
+        "team": "TOTAL",
+        "marketType": "combo",
+        "line": 11.0,
+        "oddsOver": "-104",
+        "oddsUnder": "-118",
+        "params": {
+          "PA": 4.5,
+          "hitProb": 0.25,
+          "meanRuns": 5.5,
+          "meanRBI": 0.5,
+          "meanHR": 0.08
+        }
+      }
+    ]
+  },
+  {
+    "id": "g_live_mlb_7",
+    "sport": "mlb",
+    "matchup": "San Francisco Giants @ Arizona Diamondbacks",
     "short": "SAN@ARI",
     "props": [
       {
-        "id": "p_g_mlb_825064_hits",
-        "name": "B. Witt Jr",
-        "team": "SAN",
-        "marketType": "hits",
-        "line": 0.5,
-        "oddsOver": "-145",
-        "oddsUnder": "+115",
-        "params": {
-          "PA": 4.4,
-          "hitProb": 0.255,
-          "meanRuns": 0.45,
-          "meanRBI": 0.4,
-          "meanHR": 0.12
-        }
-      },
-      {
-        "id": "p_g_mlb_825064_pitcher",
-        "name": "T. Glasnow",
+        "id": "p_g_live_mlb_7_ks",
+        "name": "Starting Pitcher Ace",
         "team": "ARI",
         "marketType": "pitcherKs",
         "line": 5.5,
-        "oddsOver": "-110",
-        "oddsUnder": "-110",
+        "oddsOver": "-130",
+        "oddsUnder": "+110",
         "params": {
-          "k9": 8.7,
-          "ip": 5.5,
+          "k9": 9.4,
+          "ip": 6.1,
           "PA": 0,
           "hitProb": 0,
           "meanRuns": 0,
@@ -794,57 +430,405 @@
         }
       },
       {
-        "id": "p_g_mlb_825064_combo",
-        "name": "Lineup Slugger Pro",
+        "id": "p_g_live_mlb_7_hr",
+        "name": "Cleanup Slugger Pro",
         "team": "SAN",
+        "marketType": "hits",
+        "line": 0.5,
+        "oddsOver": "+225",
+        "oddsUnder": "-300",
+        "params": {
+          "PA": 4.2,
+          "hitProb": 0.265,
+          "meanRuns": 0.45,
+          "meanRBI": 0.35,
+          "meanHR": 0.12
+        }
+      },
+      {
+        "id": "p_g_live_mlb_7_combo",
+        "name": "Lineup Global Core",
+        "team": "TOTAL",
         "marketType": "combo",
-        "line": 1.5,
+        "line": 9.5,
+        "oddsOver": "-105",
+        "oddsUnder": "-115",
+        "params": {
+          "PA": 4.5,
+          "hitProb": 0.25,
+          "meanRuns": 4.75,
+          "meanRBI": 0.5,
+          "meanHR": 0.08
+        }
+      }
+    ]
+  },
+  {
+    "id": "g_live_mlb_8",
+    "sport": "mlb",
+    "matchup": "Los Angeles Dodgers @ Athletics",
+    "short": "LOS@ATH",
+    "props": [
+      {
+        "id": "p_g_live_mlb_8_ks",
+        "name": "Starting Pitcher Ace",
+        "team": "ATH",
+        "marketType": "pitcherKs",
+        "line": 5.5,
+        "oddsOver": "+136",
+        "oddsUnder": "-162",
+        "params": {
+          "k9": 9.4,
+          "ip": 6.1,
+          "PA": 0,
+          "hitProb": 0,
+          "meanRuns": 0,
+          "meanRBI": 0,
+          "meanHR": 0
+        }
+      },
+      {
+        "id": "p_g_live_mlb_8_hr",
+        "name": "Cleanup Slugger Pro",
+        "team": "LOS",
+        "marketType": "hits",
+        "line": 0.5,
+        "oddsOver": "+225",
+        "oddsUnder": "-300",
+        "params": {
+          "PA": 4.2,
+          "hitProb": 0.265,
+          "meanRuns": 0.45,
+          "meanRBI": 0.35,
+          "meanHR": 0.12
+        }
+      },
+      {
+        "id": "p_g_live_mlb_8_combo",
+        "name": "Lineup Global Core",
+        "team": "TOTAL",
+        "marketType": "combo",
+        "line": 11.0,
         "oddsOver": "-110",
         "oddsUnder": "-110",
         "params": {
+          "PA": 4.5,
+          "hitProb": 0.25,
+          "meanRuns": 5.5,
+          "meanRBI": 0.5,
+          "meanHR": 0.08
+        }
+      }
+    ]
+  },
+  {
+    "id": "g_live_mlb_9",
+    "sport": "mlb",
+    "matchup": "Pittsburgh Pirates @ Philadelphia Phillies",
+    "short": "PIT@PHI",
+    "props": [
+      {
+        "id": "p_g_live_mlb_9_ks",
+        "name": "Starting Pitcher Ace",
+        "team": "PHI",
+        "marketType": "pitcherKs",
+        "line": 5.5,
+        "oddsOver": "-126",
+        "oddsUnder": "+108",
+        "params": {
+          "k9": 9.4,
+          "ip": 6.1,
+          "PA": 0,
+          "hitProb": 0,
+          "meanRuns": 0,
+          "meanRBI": 0,
+          "meanHR": 0
+        }
+      },
+      {
+        "id": "p_g_live_mlb_9_hr",
+        "name": "Cleanup Slugger Pro",
+        "team": "PIT",
+        "marketType": "hits",
+        "line": 0.5,
+        "oddsOver": "+225",
+        "oddsUnder": "-300",
+        "params": {
           "PA": 4.2,
-          "hitProb": 0.243,
-          "meanRuns": 0.55,
-          "meanRBI": 0.6,
-          "meanHR": 0.15
+          "hitProb": 0.265,
+          "meanRuns": 0.45,
+          "meanRBI": 0.35,
+          "meanHR": 0.12
+        }
+      },
+      {
+        "id": "p_g_live_mlb_9_combo",
+        "name": "Lineup Global Core",
+        "team": "TOTAL",
+        "marketType": "combo",
+        "line": 9.5,
+        "oddsOver": "-124",
+        "oddsUnder": "+102",
+        "params": {
+          "PA": 4.5,
+          "hitProb": 0.25,
+          "meanRuns": 4.75,
+          "meanRBI": 0.5,
+          "meanHR": 0.08
         }
       }
     ]
   },
   {
-    "id": "g_foot_0",
-    "sport": "futbol",
-    "matchup": "Real Madrid vs Barcelona",
-    "short": "RMAvsFCB",
+    "id": "g_live_mlb_10",
+    "sport": "mlb",
+    "matchup": "Cincinnati Reds @ Milwaukee Brewers",
+    "short": "CIN@MIL",
     "props": [
       {
-        "id": "p_g_foot_0_goles",
-        "name": "Goles Totales Partido",
-        "team": "TOTAL",
-        "marketType": "goals",
-        "line": 2.5,
-        "oddsOver": "-120",
-        "oddsUnder": "-105",
+        "id": "p_g_live_mlb_10_ks",
+        "name": "Starting Pitcher Ace",
+        "team": "MIL",
+        "marketType": "pitcherKs",
+        "line": 5.5,
+        "oddsOver": "-190",
+        "oddsUnder": "+160",
         "params": {
+          "k9": 9.4,
+          "ip": 6.1,
           "PA": 0,
           "hitProb": 0,
-          "meanRuns": 2.85,
+          "meanRuns": 0,
           "meanRBI": 0,
           "meanHR": 0
         }
       },
       {
-        "id": "p_g_foot_0_corners",
-        "name": "Tiros de Esquina",
-        "team": "RMA",
-        "marketType": "corners",
+        "id": "p_g_live_mlb_10_hr",
+        "name": "Cleanup Slugger Pro",
+        "team": "CIN",
+        "marketType": "hits",
+        "line": 0.5,
+        "oddsOver": "+225",
+        "oddsUnder": "-300",
+        "params": {
+          "PA": 4.2,
+          "hitProb": 0.265,
+          "meanRuns": 0.45,
+          "meanRBI": 0.35,
+          "meanHR": 0.12
+        }
+      },
+      {
+        "id": "p_g_live_mlb_10_combo",
+        "name": "Lineup Global Core",
+        "team": "TOTAL",
+        "marketType": "combo",
+        "line": 7.0,
+        "oddsOver": "-106",
+        "oddsUnder": "-114",
+        "params": {
+          "PA": 4.5,
+          "hitProb": 0.25,
+          "meanRuns": 3.5,
+          "meanRBI": 0.5,
+          "meanHR": 0.08
+        }
+      }
+    ]
+  },
+  {
+    "id": "g_live_mlb_11",
+    "sport": "mlb",
+    "matchup": "Chicago White Sox @ Cleveland Guardians",
+    "short": "CHI@CLE",
+    "props": [
+      {
+        "id": "p_g_live_mlb_11_ks",
+        "name": "Starting Pitcher Ace",
+        "team": "CLE",
+        "marketType": "pitcherKs",
+        "line": 5.5,
+        "oddsOver": "+104",
+        "oddsUnder": "-122",
+        "params": {
+          "k9": 9.4,
+          "ip": 6.1,
+          "PA": 0,
+          "hitProb": 0,
+          "meanRuns": 0,
+          "meanRBI": 0,
+          "meanHR": 0
+        }
+      },
+      {
+        "id": "p_g_live_mlb_11_hr",
+        "name": "Cleanup Slugger Pro",
+        "team": "CHI",
+        "marketType": "hits",
+        "line": 0.5,
+        "oddsOver": "+225",
+        "oddsUnder": "-300",
+        "params": {
+          "PA": 4.2,
+          "hitProb": 0.265,
+          "meanRuns": 0.45,
+          "meanRBI": 0.35,
+          "meanHR": 0.12
+        }
+      },
+      {
+        "id": "p_g_live_mlb_11_combo",
+        "name": "Lineup Global Core",
+        "team": "TOTAL",
+        "marketType": "combo",
         "line": 8.5,
+        "oddsOver": "-106",
+        "oddsUnder": "-114",
+        "params": {
+          "PA": 4.5,
+          "hitProb": 0.25,
+          "meanRuns": 4.25,
+          "meanRBI": 0.5,
+          "meanHR": 0.08
+        }
+      }
+    ]
+  },
+  {
+    "id": "g_live_mlb_12",
+    "sport": "mlb",
+    "matchup": "Detroit Tigers @ Texas Rangers",
+    "short": "DET@TEX",
+    "props": [
+      {
+        "id": "p_g_live_mlb_12_ks",
+        "name": "Starting Pitcher Ace",
+        "team": "TEX",
+        "marketType": "pitcherKs",
+        "line": 5.5,
+        "oddsOver": "-134",
+        "oddsUnder": "+116",
+        "params": {
+          "k9": 9.4,
+          "ip": 6.1,
+          "PA": 0,
+          "hitProb": 0,
+          "meanRuns": 0,
+          "meanRBI": 0,
+          "meanHR": 0
+        }
+      },
+      {
+        "id": "p_g_live_mlb_12_hr",
+        "name": "Cleanup Slugger Pro",
+        "team": "DET",
+        "marketType": "hits",
+        "line": 0.5,
+        "oddsOver": "+225",
+        "oddsUnder": "-300",
+        "params": {
+          "PA": 4.2,
+          "hitProb": 0.265,
+          "meanRuns": 0.45,
+          "meanRBI": 0.35,
+          "meanHR": 0.12
+        }
+      },
+      {
+        "id": "p_g_live_mlb_12_combo",
+        "name": "Lineup Global Core",
+        "team": "TOTAL",
+        "marketType": "combo",
+        "line": 8.0,
+        "oddsOver": "-104",
+        "oddsUnder": "-118",
+        "params": {
+          "PA": 4.5,
+          "hitProb": 0.25,
+          "meanRuns": 4.0,
+          "meanRBI": 0.5,
+          "meanHR": 0.08
+        }
+      }
+    ]
+  },
+  {
+    "id": "g_live_mlb_13",
+    "sport": "mlb",
+    "matchup": "Los Angeles Angels @ Seattle Mariners",
+    "short": "LOS@SEA",
+    "props": [
+      {
+        "id": "p_g_live_mlb_13_ks",
+        "name": "Starting Pitcher Ace",
+        "team": "SEA",
+        "marketType": "pitcherKs",
+        "line": 5.5,
+        "oddsOver": "-210",
+        "oddsUnder": "+176",
+        "params": {
+          "k9": 9.4,
+          "ip": 6.1,
+          "PA": 0,
+          "hitProb": 0,
+          "meanRuns": 0,
+          "meanRBI": 0,
+          "meanHR": 0
+        }
+      },
+      {
+        "id": "p_g_live_mlb_13_hr",
+        "name": "Cleanup Slugger Pro",
+        "team": "LOS",
+        "marketType": "hits",
+        "line": 0.5,
+        "oddsOver": "+225",
+        "oddsUnder": "-300",
+        "params": {
+          "PA": 4.2,
+          "hitProb": 0.265,
+          "meanRuns": 0.45,
+          "meanRBI": 0.35,
+          "meanHR": 0.12
+        }
+      },
+      {
+        "id": "p_g_live_mlb_13_combo",
+        "name": "Lineup Global Core",
+        "team": "TOTAL",
+        "marketType": "combo",
+        "line": 7.5,
+        "oddsOver": "-110",
+        "oddsUnder": "-110",
+        "params": {
+          "PA": 4.5,
+          "hitProb": 0.25,
+          "meanRuns": 3.75,
+          "meanRBI": 0.5,
+          "meanHR": 0.08
+        }
+      }
+    ]
+  },
+  {
+    "id": "g_live_foot_0",
+    "sport": "futbol",
+    "matchup": "Alavés vs Getafe",
+    "short": "ALAvsGET",
+    "props": [
+      {
+        "id": "p_g_live_foot_0_goles",
+        "name": "Goles Totales Partido",
+        "team": "TOTAL",
+        "marketType": "goals",
+        "line": 2.5,
         "oddsOver": "-115",
-        "oddsUnder": "-115",
+        "oddsUnder": "-105",
         "params": {
           "PA": 0,
           "hitProb": 0,
-          "meanRuns": 9.4,
+          "meanRuns": 2.7,
           "meanRBI": 0,
           "meanHR": 0
         }
@@ -852,39 +836,23 @@
     ]
   },
   {
-    "id": "g_foot_1",
+    "id": "g_live_foot_1",
     "sport": "futbol",
-    "matchup": "Atletico Madrid vs Athletic Club",
-    "short": "ATMvsATH",
+    "matchup": "Barcelona vs Athletic Bilbao",
+    "short": "BARvsATH",
     "props": [
       {
-        "id": "p_g_foot_1_goles",
+        "id": "p_g_live_foot_1_goles",
         "name": "Goles Totales Partido",
         "team": "TOTAL",
         "marketType": "goals",
         "line": 2.5,
-        "oddsOver": "-120",
+        "oddsOver": "-115",
         "oddsUnder": "-105",
         "params": {
           "PA": 0,
           "hitProb": 0,
-          "meanRuns": 2.85,
-          "meanRBI": 0,
-          "meanHR": 0
-        }
-      },
-      {
-        "id": "p_g_foot_1_corners",
-        "name": "Tiros de Esquina",
-        "team": "ATM",
-        "marketType": "corners",
-        "line": 8.5,
-        "oddsOver": "-115",
-        "oddsUnder": "-115",
-        "params": {
-          "PA": 0,
-          "hitProb": 0,
-          "meanRuns": 9.4,
+          "meanRuns": 2.7,
           "meanRBI": 0,
           "meanHR": 0
         }
@@ -892,39 +860,23 @@
     ]
   },
   {
-    "id": "g_foot_2",
+    "id": "g_live_foot_2",
     "sport": "futbol",
-    "matchup": "Manchester City vs Arsenal",
-    "short": "MCIvsARS",
+    "matchup": "Atlético Madrid vs Málaga",
+    "short": "ATLvsMÁL",
     "props": [
       {
-        "id": "p_g_foot_2_goles",
+        "id": "p_g_live_foot_2_goles",
         "name": "Goles Totales Partido",
         "team": "TOTAL",
         "marketType": "goals",
         "line": 2.5,
-        "oddsOver": "-120",
+        "oddsOver": "-115",
         "oddsUnder": "-105",
         "params": {
           "PA": 0,
           "hitProb": 0,
-          "meanRuns": 2.85,
-          "meanRBI": 0,
-          "meanHR": 0
-        }
-      },
-      {
-        "id": "p_g_foot_2_corners",
-        "name": "Tiros de Esquina",
-        "team": "MCI",
-        "marketType": "corners",
-        "line": 8.5,
-        "oddsOver": "-115",
-        "oddsUnder": "-115",
-        "params": {
-          "PA": 0,
-          "hitProb": 0,
-          "meanRuns": 9.4,
+          "meanRuns": 2.7,
           "meanRBI": 0,
           "meanHR": 0
         }
@@ -932,39 +884,23 @@
     ]
   },
   {
-    "id": "g_foot_3",
+    "id": "g_live_foot_3",
     "sport": "futbol",
-    "matchup": "Juventus vs AC Milan",
-    "short": "JUVvsMIL",
+    "matchup": "Celta Vigo vs CA Osasuna",
+    "short": "CELvsCA ",
     "props": [
       {
-        "id": "p_g_foot_3_goles",
+        "id": "p_g_live_foot_3_goles",
         "name": "Goles Totales Partido",
         "team": "TOTAL",
         "marketType": "goals",
         "line": 2.5,
-        "oddsOver": "-120",
+        "oddsOver": "-115",
         "oddsUnder": "-105",
         "params": {
           "PA": 0,
           "hitProb": 0,
-          "meanRuns": 2.85,
-          "meanRBI": 0,
-          "meanHR": 0
-        }
-      },
-      {
-        "id": "p_g_foot_3_corners",
-        "name": "Tiros de Esquina",
-        "team": "JUV",
-        "marketType": "corners",
-        "line": 8.5,
-        "oddsOver": "-115",
-        "oddsUnder": "-115",
-        "params": {
-          "PA": 0,
-          "hitProb": 0,
-          "meanRuns": 9.4,
+          "meanRuns": 2.7,
           "meanRBI": 0,
           "meanHR": 0
         }
@@ -972,39 +908,95 @@
     ]
   },
   {
-    "id": "g_foot_4",
+    "id": "g_live_foot_4",
     "sport": "futbol",
-    "matchup": "Bayern Munich vs Dortmund",
-    "short": "FCBvsBVB",
+    "matchup": "Espanyol vs Levante",
+    "short": "ESPvsLEV",
     "props": [
       {
-        "id": "p_g_foot_4_goles",
+        "id": "p_g_live_foot_4_goles",
         "name": "Goles Totales Partido",
         "team": "TOTAL",
         "marketType": "goals",
         "line": 2.5,
-        "oddsOver": "-120",
+        "oddsOver": "-115",
         "oddsUnder": "-105",
         "params": {
           "PA": 0,
           "hitProb": 0,
-          "meanRuns": 2.85,
+          "meanRuns": 2.7,
           "meanRBI": 0,
           "meanHR": 0
         }
-      },
+      }
+    ]
+  },
+  {
+    "id": "g_live_foot_5",
+    "sport": "futbol",
+    "matchup": "Sevilla vs Rayo Vallecano",
+    "short": "SEVvsRAY",
+    "props": [
       {
-        "id": "p_g_foot_4_corners",
-        "name": "Tiros de Esquina",
-        "team": "FCB",
-        "marketType": "corners",
-        "line": 8.5,
+        "id": "p_g_live_foot_5_goles",
+        "name": "Goles Totales Partido",
+        "team": "TOTAL",
+        "marketType": "goals",
+        "line": 2.5,
         "oddsOver": "-115",
-        "oddsUnder": "-115",
+        "oddsUnder": "-105",
         "params": {
           "PA": 0,
           "hitProb": 0,
-          "meanRuns": 9.4,
+          "meanRuns": 2.7,
+          "meanRBI": 0,
+          "meanHR": 0
+        }
+      }
+    ]
+  },
+  {
+    "id": "g_live_foot_6",
+    "sport": "futbol",
+    "matchup": "Valencia vs Real Betis",
+    "short": "VALvsREA",
+    "props": [
+      {
+        "id": "p_g_live_foot_6_goles",
+        "name": "Goles Totales Partido",
+        "team": "TOTAL",
+        "marketType": "goals",
+        "line": 2.5,
+        "oddsOver": "-115",
+        "oddsUnder": "-105",
+        "params": {
+          "PA": 0,
+          "hitProb": 0,
+          "meanRuns": 2.7,
+          "meanRBI": 0,
+          "meanHR": 0
+        }
+      }
+    ]
+  },
+  {
+    "id": "g_live_foot_7",
+    "sport": "futbol",
+    "matchup": "Real Madrid vs Real Sociedad",
+    "short": "REAvsREA",
+    "props": [
+      {
+        "id": "p_g_live_foot_7_goles",
+        "name": "Goles Totales Partido",
+        "team": "TOTAL",
+        "marketType": "goals",
+        "line": 2.5,
+        "oddsOver": "-115",
+        "oddsUnder": "-105",
+        "params": {
+          "PA": 0,
+          "hitProb": 0,
+          "meanRuns": 2.7,
           "meanRBI": 0,
           "meanHR": 0
         }
